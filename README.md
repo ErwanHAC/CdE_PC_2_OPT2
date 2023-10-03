@@ -7,4 +7,16 @@ Afin de modifier la fiche en fonction du retour de Catherine, j'ai créé ce dé
 <li>Trois branches personnelles nommées "version_ECA", "version_FBA" et "version_ALD". Nous pourrons chacun travailler sur ces branches sans nous soucier des modifications des autres. <b>Vous êtes libres de mofifier le contenu des fichiers .tex mais leur nom.</b></li>
 </ul>
 
-### Comment faire pour travailler sur votre branche ?
+### Comment faire pour travailler sur les fichiers de votre branche ?
+<ul>
+<li>Cliquer sur l'onglet "Code", puis cliquer sur l'onglet "main" sous le titre "Cde_PC_2_OPT2" et choisir votre branche.</li>
+<li>Cliquer sur l'onglet "<> Code" puis enregistrer sous format zip les fichiers de votre branche. Copier les fichiers de l'archive dans un dossier que vous nommerez comme vous voudrez dans le dossier "_dossier_fiche_template" du projet CdE PC 2.</li>
+<li>Tester la compilation du fichier ".tex" puis faire les modifications concernant vos entraînements.</li>
+</ul>
+
+### Comment faire pour partager mes modifications ?
+<ul>
+<li>Revenir sur le dépôt, cliquer sur l'onglet "Code" et retourner à votre branche.</li>
+<li>Cliquer sur "Add file" puis "Upload files".</li>
+<li>Faire glisser le ou les fichiers que vous avez modifiés (tout le dossier des figures si vous avez modifié des figures). Ajouter une brève description de vos changements dans la partie "Add an optional extended description" puis cliquer sur "Commit changes".</li>
+</ul>
