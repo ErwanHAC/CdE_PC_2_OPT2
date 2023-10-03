@@ -19,4 +19,5 @@ Afin de modifier la fiche en fonction du retour de Catherine, j'ai créé ce dé
 <li>Revenir sur le dépôt, cliquer sur l'onglet "Code" et retourner à votre branche.</li>
 <li>Cliquer sur "Add file" puis "Upload files".</li>
 <li>Faire glisser le ou les fichiers que vous avez modifiés (tout le dossier des figures si vous avez modifié des figures). Ajouter une brève description de vos changements dans la partie "Add an optional extended description" puis cliquer sur "Commit changes".</li>
+<li>Une fois les changements demanndés vous verrez que votre branches est "en avance de Y commits" et/ou "en retard de X commits". En avance de X commits, signifie que vous avez effectué X modifications qui n'ont pas encore été fournies à la branche principale. En retard de Y commits signifie qu'il y a Y modifications sur la branche principale qui n'ont pas encore été propagées sur votre branche.</li>
 </ul>
