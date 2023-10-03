@@ -1,0 +1,68 @@
+\begin{tikzpicture}[decoration={markings, mark= at position 0.6 with {\arrow{latex}}},scale=0.55]
+    % axe optique
+    \draw[thin,->](0,0)--++(14.5,0)node[above right]{$x$};
+
+    % coordonnées des points
+    \coordinate (S) at (0.5,0);
+    \coordinate (O1) at (3,0);
+    \coordinate (O2) at (9,0);
+    \coordinate (FY) at (6,0);
+    \coordinate (E) at (14,0);
+    \coordinate (S1) at (6,0.6);
+    \coordinate (S2) at (6,-0.6);
+    \coordinate (M) at (14,1.8);
+    \coordinate (H) at (6.5,-0.4);
+    
+    % Fentes d'Young
+    \draw[shift={(FY)},thick] (0,-2)--++(0,1.3);
+    \draw[shift={(FY)},thick] (0,-0.5)--++(0,1);
+    \draw[shift={(FY)},thick] (0,0.7)--++(0,1.3)node[above]{fentes d'Young};
+
+    
+    % Tracé des rayons lumineux
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (S) -- (O1|-S2);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (O1|-S2) -- (S2);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (S) -- (O1|-S1);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (O1|-S1) -- (S1);
+    \draw[dashed] (M) -- ($(O2)!-3.2cm!(M)$);
+    \draw[color=\AEFcouleurRouge, ultra thick] (S2) -- (H);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (H) -- (9,0.5);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (9,0.5) -- (M);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (S1) -- (9,1.7);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (9,1.7) -- (M);
+    \draw[dashed] (S1) -- ($(H)!-1.3cm!(S1)$);
+
+    % Notation des points
+    \draw (S) node{$\bullet$} node[above]{$\ptS$};
+    \draw (S1) node[above left]{$\ptS_1$};
+    \draw (S2) node[below left]{$\ptS_2$};
+    \draw (M) node{$\bullet$} node[right]{$\ptM$};%(x,y,0)$};
+    \draw (H) node[above, yshift=5pt]{$\ptH$};
+    \draw (H) node{$\bullet$};
+    
+    % Introduction des angles
+    \draw (10.45,0.5) to [bend left] (10.5,0);
+    \node at (10.85,0.3) [xshift=5pt]{$\theta_1$};
+    \draw (6.95,-1.3) to [bend left] (6,-1.5);
+    \node at (6.6,-1.75) [yshift=-5pt]{$\theta_1$};
+    
+    % Ajout des longueurs caractériqtiques
+    \draw[dotted] (0.5,-1.5) -- (S);
+    \draw[<->,>=latex,color=\AEFcouleurBleu] (0.5,-1.5)--++(2.5,0) node[midway, above]{$f'_1$};
+    \draw[<->,>=latex,color=\AEFcouleurBleu] (9,-1.5)--++(5,0) node[midway, above]{$f'_2$};
+    \draw[<->,>=latex,color=\AEFcouleurBleu] (5.5,-0.6)--++(0,1.2) node[midway, left, yshift=3pt]{$a$};
+
+    % Ajout des angles droits
+    \draw (6.3,-0.45) -- (6.4,-0.7);
+    \draw (6.4,-0.7) -- (6.6,-0.62);
+    \draw (6.53,-0.9) -- (6.63,-1.1);
+    \draw (6.63,-1.1) -- (6.83,-1.01);
+
+    % Lentilles
+    \draw[shift={(O1)},thick,<->,>=latex] (0,-2.25)--++(0,4.5) node[above]{$\mathcal{L}_1$};
+    \draw[shift={(O2)},thick,<->,>=latex] (0,-2.25)--++(0,4.5) node[above]{$\mathcal{L}_2$};
+
+    % Ecran
+    \draw[shift={(E)},thick,->,>=latex] (0,-2)--++(0,4.5)node[above]{$y$};
+
+\end{tikzpicture}

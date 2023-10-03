@@ -1,0 +1,74 @@
+\def\longLl{4cm}
+\def\epLab{5pt}
+
+
+\begin{tikzpicture}[decoration={markings, mark= at position 0.6 with {\arrow{latex}}},scale=0.35]
+
+    % coordonnées des points
+    \coordinate (S) at (0,0);
+    \coordinate (I) at (2,2.5);
+    \coordinate (J) at (4,5);
+    \coordinate (K) at (6,2.5);
+    \coordinate (S1) at (4,0);
+    \coordinate (S2) at (8,0);
+    \coordinate (M1) at (4,2.5);
+    \coordinate (M2) at (4,5);
+    \coordinate (H) at (3.58,0.59);
+
+
+    % Miroir
+    \draw ($(M1)+(-\longLl,0)$) -- ($(M1)+(\longLl,0)$);
+    \fill[pattern= north east lines] ( $(M1)+(-\longLl,0)$ ) -- ($(M1)+(\longLl,0)$) -- ( $(M1)+(\longLl,\epLab)$ ) -- ( $(M1)+(-\longLl,\epLab)$ );
+    \draw ($(M2)+(-\longLl,0)$) -- ($(M2)+(\longLl,0)$);
+    \fill[pattern= north east lines] ( $(M2)+(-\longLl,0)$ ) -- ($(M2)+(\longLl,0)$) -- ( $(M2)+(\longLl,\epLab)$ ) -- ( $(M2)+(-\longLl,\epLab)$ );
+    
+    
+    % Tracé des rayons lumineux
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (S) -- (I);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (I) -- (J);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (J) -- (K);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (K) -- (S2);
+    \draw[color=\AEFcouleurRouge,postaction={decorate}, ultra thick] (I) -- (H);
+    \draw[color=\AEFcouleurRouge, ultra thick] (H) -- (S1);
+    
+    % Tracé des pointillés
+    \draw[dashed] (I) -- ($(I)+(0,-2)$);
+    \draw[dashed] (J) -- ($(J)+(0,-2)$);
+    \draw[dashed] (K) -- (H);
+
+    % Notation des points
+    \draw (S) node{$\bullet$} node[below left]{$\ptS$};
+    \draw (I) node{$\bullet$} node[above left]{$\ptI$};
+    \draw (J) node{$\bullet$} node[above]{$\ptJ$};
+    \draw (K) node{$\bullet$} node[above right]{$\ptK$};
+    \draw ($(M1)+(-\longLl,0)$) node[left]{$\mathcal{M}_1$};
+    \draw ($(M2)+(-\longLl,0)$) node[left]{$\mathcal{M}_2$};
+    \draw (H) node[below left]{$\ptH$};
+    \draw (H) node{$\bullet$};
+    \draw (S1) node[right]{\textbf{\textcircled{\footnotesize 1}}};
+    \draw (S2) node[right]{\textbf{\textcircled{\footnotesize 2}}};
+
+    % Ajout des angles droits
+    \draw (3.85,0.8) -- (4.05,0.55);
+    \draw (4.05,0.55) -- (3.8,0.35);
+    \draw (5.65,2.25) -- (5.9,2);
+    \draw (5.9,2) -- (6.2,2.2);
+    
+    % Ajout des longueurs caractériqtiques
+    \draw[<->,>=latex,color=\AEFcouleurBleu] (8.2,2.5)--++(0,2.5) node[midway,right]{$e$};
+
+    % Introduction des angles
+    \draw (1.5,1.8) to [bend right] (2,1.8);
+    \node at (1.65,1.4) [] {$\theta$};
+    \draw (2.55,1.8) to [bend left] (2,1.7);
+    \node at (2.35,1.35) [] {$\theta$};
+    \draw (3.5,4.3) to [bend right] (4,4.3);
+    \node at (3.65,3.9) [] {$\theta$};
+    \draw (4.55,4.3) to [bend left] (4,4.2);
+    \node at (4.35,3.85) [] {$\theta$};
+    \draw (5,2.5) to [bend right] (5.2,1.8);
+    \node at (4.6,2) [] {$\theta$};
+
+
+
+\end{tikzpicture}

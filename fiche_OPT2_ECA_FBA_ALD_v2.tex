@@ -1,0 +1,2116 @@
+% ------------------------------------------------------------ %
+% Date : ??/??/2023
+% ------------------------------------------------------------ %
+
+% ------------------------------------------------------------ %
+% -----------------  Auteurs et relecteurs  ------------------ %
+% Auteur référent : ??
+% Auteur 1 : 
+% Auteur 2 : 
+% Auteur 3 : 
+% Auteur 4 : 
+% Relecteur I : 
+% Relecteur II.1 : 
+% Relecteur II.2 : 
+% ------------------------------------------------------------ %
+
+% ------------------------------------------------------------ %
+% ----------------------  Fiche ?????  ----------------------- %
+% Grand thème : ???
+% Thème : ???
+% ------------------------------------------------------------ %
+
+
+% ======================================================= % 
+% ============== Gestion de la compilation ============== %
+% ======================================================= % 
+\ifdefined\mainIsLoaded\else
+\RequirePackage{import}
+\subimport{../../}{_preambule_CdE_PC}
+
+%Ajout EHA
+\makeatletter
+\newcommand\Label[1]{&\refstepcounter{equation}(\theequation)\ltx@label{#1}&}
+\makeatother
+
+\usetikzlibrary{decorations.markings, patterns}
+
+\begin{document}
+\fi
+% ======================================================= % 
+% ======================================================= % 
+
+
+
+% ************************************* % 
+% ******** Classes concernées  ******** %
+% ************************************* % 
+% 			    Y = oui			        %
+% 		        N = non			        %
+% ************************************* % 
+\pourPSI{Y}
+\pourPC{Y}
+\pourMP{Y}
+\pourMPI{Y}
+\pourPT{Y}
+\pourTSI{Y}
+\pourTPC{Y}
+\pourATS{Y}
+% ************************************* % 
+
+
+
+% ******************************************************* % 
+% *************   Gestion des couleurs     ************** %
+% ******************************************************* % 
+
+%  Exemple : définition de la couleur bleue de CBD
+%  Merci de préfixer vos couleur
+
+% La commande \couleurNBouCouleur prend deux paramètres :
+% #1 est la couleur NB ; #2 est la couleur "en couleur"
+
+\def\AEFcouleurBleu{\couleurNBouCouleur{black}{blue}}
+\def\AEFcouleurRouge{\couleurNBouCouleur{gray}{red}}
+
+% ******************************************************* % 
+
+
+
+
+% ============================================================================ %
+%                            FICHE D'ENTRAÎNEMENT                              %
+% ============================================================================ %
+% ======================= Métadonnées sur la fiche =========================== %
+\titreFicheEntrainement		{Interférences à deux ondes}
+\grandTheme					{Grand thème ici}
+\numeroFiche				{OPT2}
+\uniqueID					{MgkVbSrLHAu} % une chaîne de caractères (a-z, A-Z) aléatoire de 10 caractères.
+\nombreColonnesReponses		{2} % 1, 2, 3, etc.
+% ============================================================================ %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\debutFicheEntrainement                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+% --------------------------------------------------------------------- %
+%                              Prérequis                                %
+% --------------------------------------------------------------------- %
+% ================== Métadonnées sur le prérequis ===================== %
+\avecPrerequis{Y} % Y ou N
+% ===================================================================== %
+\begin{prerequis}
+	% Quelques prérequis, très concis !
+	% Respectez le format suivant :  
+	Fonctions trigonométriques. Signaux (fréquence, période, pulsations, longueur d’onde, phase).
+	
+	\constantesUtiles
+	\begin{listeConstantes}
+		\item Célérité de la lumière $c = \SI{3.00e8}{m \cdot s^{-1}}$.
+	\end{listeConstantes}
+\end{prerequis}
+% --------------------------------------------------------------------- %
+
+
+
+
+
+
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+\sectionFicheEntrainement{Pour commencer}
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+
+
+
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Somme de signaux périodiques}
+\hauteurLargeurCadreReponse		{6mm}{2.75cm}
+\dureeResolutionFacultative		{1} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{Y}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+On définit deux signaux lumineux : $\; s_1 \left( x,t \right)=S_0 \; \cos \left( \omega t - k x\right) \quad \text{et} \quad s_2 \left(x,t\right)=S_0 \; \cos \left( \omega t - k x + \varphi\right)$
+avec $\omega$ leur pulsation temporelle, $k$ leur pulsation spatiale et $\varphi$ une phase à l'origine. La superposition $s \left(x,t\right)$ de ces deux vibrations peut se mettre sous la forme :
+
+\begin{equation*}
+	s \left(x,t\right) = s_1 \left(x,t\right) + s_2 \left(x,t\right) = S_0 \left[ \; f\left(x,t\right)\; \left( 1+\cos \varphi \right) + g\left(x,t\right) \; \sin \varphi \; \right].
+\end{equation*}
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+\begin{minipage}{0.32\linewidth}
+	\vspace{10pt}
+	Exprimer les fonctions suivantes :
+\end{minipage}
+\hspace*{0cm}
+\begin{minipage}{0.67\linewidth}
+	\begin{multicols}{2}
+	% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+	%               Question                 %
+	% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+	\begin{enonce}
+	$f\left(x,t\right)$
+	\end{enonce}
+
+	\reponse{$\cos\left(\omega t - k x\right)$}
+
+	\begin{corrige}
+		\begin{align*}
+			s\left(x,t\right) & = S_0 \; \cos \left(\omega t - k x\right) + S_0 \; \cos \left(\omega t - k x + \varphi\right) \\
+			& = S_0 \; \big( \cos \left(\omega t - k x\right) + \cos \left(\omega t - k x + \varphi\right) \big)\\
+			& = S_0 \; \big( \cos \left(\omega t - k x\right) + \cos \left(\omega t - k x\right)\cos \varphi - \sin \left(\omega t - k x\right)\sin \varphi \big)\\
+			& = S_0 \; \big( \cos \left(\omega t - k x\right) \; \big(1 +\cos \varphi \big) - \sin \left(\omega t - k x\right)\sin \varphi \big)\\
+			& = S_0 \big( \; f\left(x,t\right)\; \big( 1+\cos \varphi \big) + g\left(x,t\right) \; \sin \varphi \; \big)
+		\end{align*}
+	Par identification, on a $f\left(x,t\right)=\cos \left(\omega t - k x\right)$ et $g\left(x,t\right)=-\sin \left(\omega t - k x\right)$
+	\end{corrige}
+
+	% ************************************** %
+
+
+	% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+	%               Question                 %
+	% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+	\begin{enonce}
+	$g\left(x,t\right)$
+	\end{enonce}
+
+	\reponse{$-\sin\left(\omega t - k x\right)$}
+
+	\begin{corrige}
+	Voir corrigé de la question précédente.
+	\end{corrige}
+
+	% ************************************** %
+	\end{multicols}
+
+\end{minipage}
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+\vspace*{0.4cm}
+\begin{enonce}
+	Pour quelle valeur de phase $\varphi$ le signal résultant $s\left(x,t\right)$ s'annule ? 
+	
+	\begin{listeQCM3Colonnes}
+	\item $\varphi=0$
+	\item $\varphi=\frac{\pi}{2}$
+	\item $\varphi=\pi$
+	\end{listeQCM3Colonnes}
+	\smallskip
+\end{enonce}
+
+\reponse{\reponseC{}}
+
+\begin{corrige}
+	La fonction $s\left(x,t\right)$ s'annule si et seulement si :
+	\begin{equation*}
+		\begin{cases}
+		& 1+ \cos \varphi = 0 \\
+		& \sin \varphi = 0
+		\end{cases}
+	\end{equation*}
+Autrement dit :
+\begin{equation*}
+	\begin{cases}
+		& \varphi = \pi \mod 2\pi \\
+		& \varphi = \pi \mod \pi
+	\end{cases}
+\end{equation*}
+	On en déduit que l'unique condition d'annulation est $\varphi = \pi \mod 2\pi$.
+\end{corrige}
+
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Des relations trigonométriques}
+\hauteurLargeurCadreReponse		{6mm}{6.75cm}
+\dureeResolutionFacultative		{1} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{Y}
+\calculALaMain					{Y}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+On donne les relations trigonométriques suivantes
+\begin{align*}
+	\cos \left( a - b \right) &= \cos a \cos b + \sin a \sin b \Label{eq_3_1} &
+	\cos \left( a + b \right) &= \cos a \cos b - \sin a \sin b \Label{eq_3_2} \\
+	\sin \left( a - b \right) &= \sin a \cos b - \cos a \sin b \Label{eq_3_3} &
+	\sin \left( a + b \right) &= \sin a \cos b + \cos a \sin b \Label{eq_3_4}
+\end{align*}
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Sommer les relations \eqref{eq_3_1} et \eqref{eq_3_2} et isoler $\cos a \cos b$.
+	\end{enonce}
+	
+	\reponse{$\cos a \cos b = \frac{\cos \left( a - b \right) + \cos \left( a + b \right)}{2} $}
+	
+	% \begin{corrige}
+		
+	% \end{corrige}
+
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	À partir de la question précédente exprimer $\cos^2 a$.
+	\end{enonce}
+	
+	\reponse{$\cos^2 a \cos b = \frac{1 + \cos \left( 2a \right)}{2} $}
+	
+	% \begin{corrige}
+		
+	% \end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Soustraire les relations \eqref{eq_3_1} et \eqref{eq_3_2} et isoler $\sin a \sin b$
+	\end{enonce}
+	
+	\reponse{$\sin a \sin b = \frac{\cos \left( a - b \right) - \cos \left( a + b \right)}{2} $}
+	
+	% \begin{corrige}
+		
+	% \end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	À partir de la question précédente exprimer $\sin^2 a$.
+	\end{enonce}
+	
+	\reponse{$\cos^2 a \cos b = \frac{1 + \cos \left( 2a \right)}{2} $}
+	
+	% \begin{corrige}
+		
+	% \end{corrige}
+
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Sommer les relations \eqref{eq_3_3} et \eqref{eq_3_4} et isoler $\sin a \cos b$
+	\end{enonce}
+	
+	\reponse{$\sin a \cos b = \frac{\sin \left( a - b \right) + \sin \left( a + b \right)}{2} $}
+	
+	% \begin{corrige}
+		
+	% \end{corrige}
+
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	À partir de la question précédente exprimer $\sin a \cos a$.
+	\end{enonce}
+	
+	\reponse{$\sin a \cos a = \frac{\sin \left( 2a \right)}{2} $}
+	
+	% \begin{corrige}
+		
+	% \end{corrige}
+
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Valeurs moyennes}
+\hauteurLargeurCadreReponse		{6mm}{6.75cm}
+\dureeResolutionFacultative		{2} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{N}
+\calculALaMain					{Y}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.57}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+\begin{minipage}{0.9\linewidth}
+Un détecteur mesure pendant une durée $\tau = 10^6 T$ la moyenne temporelle d'un signal périodique $s\left(t \right)$ de période $T$. Cette moyenne est notée $\left< s\left( t \right) \right>_{\tau}$ et est définie telle que
+$$
+\left< s\left( t \right) \right>_{\tau} = \frac{1}{\tau} \int_t^{t+\tau} s\left( t \right)  \d{t}.
+$$
+\end{minipage}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+								\initialisationPartieDroite %
+%                                                           %
+%                                                           %
+\begin{minipage}{0.9\linewidth}
+On donne les relations trigonométriques suivantes
+	\begin{itemize}
+		\item $\cos a \cos b = \frac{\cos\left( a-b \right)+\cos\left( a+b \right) }{2}$
+		\item $\sin a \sin b = \frac{\cos\left( a-b \right)-\cos\left( a+b \right) }{2}$
+		\item $\sin a \cos b = \frac{\sin\left( a-b \right)-\sin\left( a+b \right) }{2}$.
+	\end{itemize}
+\end{minipage}
+% --------------------------------------------------------- %
+\finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+
+Calculer les moyennes temporelles des fonctions suivantes.
+
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+$s_1\left( t \right) = S_1 \cos \left( \omega_1 t - k_1 x \right)$
+\end{enonce}
+
+\reponse{$0$}
+
+\begin{corrige}
+	\begin{align*}
+	\left< s_1\left( x,t \right) \right>_{\tau} &= \frac{1}{\tau} \int_t^{t+\tau} S_1 \cos \left( \omega_1 t - k_1 x \right) \d{t} = \frac{1}{\tau \omega_1} S_1 \left[ \sin\left( \omega_1 t - k_1 x \right) \right]^{t+\tau}_{t} \\
+	&= \frac{1}{\tau \omega_1} S_1 \left( \sin\left( \omega_1 \left( t+\tau \right) - k_1 x \right) - \sin\left( \omega_1 t - k_1 x \right)  \right).
+	\end{align*}
+	On constate que $\sin\left( \omega_1 \left( t+\tau \right) - k_1 x \right) = \sin\left( \omega_1 \left( t+10^6T_1 \right) - k_1 x \right)$, avec $T_1 = \frac{2\pi}{\omega_1}$. Par définition, une fonction périodique est telle que $f(t+pT) = f(t)$, avec $p \in \Z$, donc $\left< s_1\left( x,t \right) \right>_{\tau}=0$.
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+$s_2\left( t \right) = S_2 \sin \left( \omega_2 t - k_2 x + \varphi_2\right)$ 
+\end{enonce}
+	
+\reponse{$0$}
+	
+\begin{corrige}
+	\begin{align*}
+	\left< s_2\left( x,t \right) \right>_{\tau} &= \frac{1}{\tau} \int_t^{t+\tau} S_2 \sin \left( \omega_2 t - k_2 x + \varphi_2 \right) \d{t} = -\frac{1}{\tau \omega_2} S_2 \left[ \cos\left( \omega_2 t - k_2 x + \varphi_2\right) \right]^{t+\tau}_{t} \\
+	&= -\frac{1}{\tau \omega_2} S_2 \left( \cos\left( \omega_2 \left( t+\tau \right) - k_2 x + \varphi_2 \right) - \cos\left( \omega_2 t - k_2 x + \varphi_2\right)  \right).
+	\end{align*}
+	On constate que $\cos\left( \omega_2 \left( t+\tau \right) - k_2 x + \varphi_2 \right) = \cos\left( \omega_2 \left( t+10^6T_2 \right) - k_2 x + \varphi_2\right) = \cos\left( \omega_2 t - k_2 x + \varphi_2\right)$, avec $T_2 = \frac{2\pi}{\omega_2}$, donc $\left< s_2\left( x,t \right) \right>_{\tau}=0$.
+	
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+$s_3\left( t \right) = s_1^2 $
+\end{enonce}
+		
+\reponse{$S_1^2/2$}
+			
+\begin{corrige}
+	Comme $\cos \left( a+a \right) =  \cos a \cos a - \sin a \sin a$ et $\cos \left( a-a \right) =  \cos a \cos a + \sin a \sin a$ alors $$\cos^2 a = \frac{1}{2}\left( 1 + \cos\left( 2a \right) \right) \quad \text{et donc}$$
+	\begin{align*}
+		\left< s_3\left( x,t \right) \right>_{\tau} &= \frac{1}{\tau} \int_t^{t+\tau} S_1^2 \cos^2 \left( \omega_1 t - k_1 x \right) \d{t} = \frac{1}{\tau} \frac{S_1^2}{2} \left(\left[1\right]^{t+\tau}_{t} + \frac{1}{2\omega_1}\left[\sin\left( 2 \omega_1 t - 2 k_1 x \right)\right]^{t+\tau}_{t} \right)\\
+		&= \frac{1}{\tau} \frac{S_1^2}{2} \left(\tau + \frac{1}{2\omega_1}\left(\sin\left( 2 \omega_1 \left(t+\tau\right) - 2 k_1 x \right)-\sin\left( 2 \omega_1 t - 2 k_1 x \right)\right)\right).
+	\end{align*}
+	On constate que $\sin\left( 2 \omega_1 \left(t+\tau\right) - 2 k_1 x \right) = \sin\left( 2 \omega_1 \left( t+10^6T_3 \right) - 2 k_1 x \right) = \sin\left( 2 \omega_1 t - 2 k_1 x \right)$, avec $T_3 = \frac{2\pi}{2\omega_1}$, donc
+	$$
+	\left< s_3\left( x,t \right) \right>_{\tau} = \frac{1}{\tau} \frac{S_1^2}{2} \tau = \frac{S_1^2}{2}.
+	$$
+\end{corrige}
+
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	$s_4\left( t \right) = s_2^2 $
+\end{enonce}
+			
+	\reponse{$S_2^2/2$}
+				
+	\begin{corrige}
+		D'après la relation obtenue précédemment $\sin^2 a = \frac{1}{2}\left( 1 - \cos\left( 2a \right) \right)$, et donc
+		\begin{align*}
+			\left< s_4\left( x,t \right) \right>_{\tau} &= \frac{1}{\tau} \int_t^{t+\tau} S_2^2 \sin^2 \left( \omega_2 t - k_2 x +\varphi_2\right) \d{t} = \frac{1}{\tau} \frac{S_2^2}{2} \left(\left[1\right]^{t+\tau}_{t} - \frac{1}{2\omega_2}\left[\sin\left( 2 \omega_2 t - 2 k_2 x +\varphi_2 \right)\right]^{t+\tau}_{t} \right)\\
+			&= \frac{1}{\tau} \frac{S_2^2}{2} \left(\tau - \frac{1}{2\omega_2}\left(\sin\left( 2 \omega_2 \left(t+\tau\right) - 2 k_2 x +\varphi_2 \right)-\sin\left( 2 \omega_2 t - 2 k_2 x \right)\right)\right).
+		\end{align*}
+		On constate que $\sin\left( 2 \omega_2 \left(t+\tau\right) - 2 k_2 x +\varphi_2\right) = \sin\left( 2 \omega_2 \left( t+10^6T_4 \right) - 2 k_2 x +\varphi_2 \right) = \sin\left( 2 \omega_2 t - 2 k_2 x +\varphi_2 \right)$, avec $T_4=\frac{2\pi}{2\omega_2}$, donc
+		$$
+		\left< s_4\left( x,t \right) \right>_{\tau} = \frac{1}{\tau} \frac{S_2^2}{2} \tau = \frac{S_2^2}{2}.
+		$$
+	\end{corrige}
+	
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+$s_5\left( t \right) = \left( s_1 + s_2 \right)^2 $
+\end{enonce}
+			
+\reponse{$S_1^2/2 + S_2^2/2$}
+			
+\begin{corrige}
+	\begin{align*}
+		\left< s_5\left( x,t \right) \right>_{\tau} &= \frac{1}{\tau} \int_t^{t+\tau} \left( s_1 + s_2 \right)^2  \d{t} = \frac{1}{\tau} \left(\int_t^{t+\tau} f^2_1  \d{t} + \int_t^{t+\tau} f^2_2  \d{t} + \int_t^{t+\tau} 2 s_1 s_2  \d{t} \right)\\
+		&= \frac{S_1^2}{2} + \frac{S_2^2}{2} + \frac{1}{\tau} \int_t^{t+\tau} 2S_1 S_2 \cos \left( \omega_1 t - k_1 x \right) \sin \left( \omega_2 t - k_2 x  + \varphi_2\right) \d{t}.
+	\end{align*}
+	Comme $\sin \left( a+b \right) =  \sin a \cos b + \cos a \sin b$ et $\sin \left( a-b \right) =  \sin a \cos b - \cos a \sin b$ alors $$\cos a \sin b = \frac{1}{2}\left( \sin\left( a+b \right) - \sin\left( a-b \right) \right) \quad \text{et donc}$$
+	\begin{align*}
+		\left< s_5\left( x,t \right) \right>_{\tau} &= \frac{S_1^2}{2} + \frac{S_2^2}{2} - \frac{S_1S_2}{\tau} \left( \frac{\left[ \cos\left( \left(\omega_1 + \omega_2\right)t - \left( k_1 + k_2 \right)x + \varphi_2 \right) \right]^{t+\tau}_{t}}{\omega_1+\omega_2} - \frac{\left[ \cos\left( \left(\omega_1 - \omega_2\right)t - \left( k_1 - k_2 \right)x - \varphi_2 \right) \right]^{t+\tau}_{t} }{\omega_1-\omega_2} \right).
+	\end{align*}
+	Comme $\cos\left( \left(\omega_1 + \omega_2\right)\left( t+\tau \right) - \left( k_1 + k_2 \right)x + \varphi_2\right) = \cos\left( \left(\omega_1 + \omega_2\right)\left( t+10^6 T_5\right) - \left( k_1 + k_2 \right)x + \varphi_2 \right)$, avec $T_5 = \frac{2\pi}{\omega_1+\omega_2}$, alors
+	$\cos\left( \left(\omega_1 + \omega_2\right)\left( t+10^6 T_5\right) - \left( k_1 + k_2 \right)x + \varphi_2 \right) = \cos\left( \left(\omega_1 + \omega_2\right)t - \left( k_1 + k_2 \right)x + \varphi_2 \right)$.
+
+	Comme $\cos\left( \left(\omega_1 - \omega_2\right)\left( t+\tau \right) - \left( k_1 - k_2 \right)x - \varphi_2\right) = \cos\left( \left(\omega_1 - \omega_2\right)\left( t+10^6 T_5\right) - \left( k_1 - k_2 \right)x - \varphi_2 \right)$, avec $T'_5 = \frac{2\pi}{\omega_1-\omega_2}$, alors
+	$\cos\left( \left(\omega_1 - \omega_2\right)\left( t+10^6 T'_5\right) - \left( k_1 - k_2 \right)x - \varphi_2 \right) = \cos\left( \left(\omega_1 - \omega_2\right)t - \left( k_1 - k_2 \right)x - \varphi_2 \right)$.
+	Donc
+	$$
+	\left< s_5\left( x,t \right) \right>_{\tau} = \frac{S_1^2}{2} + \frac{S_2^2}{2}.
+	$$
+
+	\end{corrige}
+
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	$s_6\left( t \right) = \left( s_1 + s_2 \right)^2 $ avec $\omega_1 = \omega_2$.
+	\end{enonce}
+				
+	\reponse{$S_1^2/2 + S_2^2/2 +S_1 S_2 \sin \varphi_2$}
+				
+	\begin{corrige}
+	On reprend la réponse précédente
+		\begin{align*}
+			\left< s_6\left( x,t \right) \right>_{\tau} &= \frac{S_1^2}{2} + \frac{S_2^2}{2} - \frac{S_1S_2}{\tau} \left( \frac{ \left[ \cos\left( 2 \omega_1 t - 2 k_1 x - \varphi_2 \right) \right]^{t+\tau}_{t} }{ 2\omega_1 } + \left[ \sin \left(-\varphi_2\right) \right]^{t+\tau}_{t} \right).
+		\end{align*}
+		Comme $\cos\left( 2\omega_1 \left( t+\tau \right) - 2 k_1 x + \varphi_2\right) = \cos\left( 2\omega_1 \left( t+10^6 T_6 \right) - 2 k_1 x - \varphi_2\right)$, avec $T_6 = \frac{2\pi}{ 2\omega_1}$, alors
+		\begin{align*}
+			\left< s_6\left( x,t \right) \right>_{\tau} &= \frac{S_1^2}{2} + \frac{S_2^2}{2} +\frac{S_1S_2}{\tau} \sin \varphi_2 \tau =  \frac{S_1^2}{2} + \frac{S_2^2}{2} +S_1 S_2 \sin \varphi_2.
+		\end{align*}
+	
+		\end{corrige}
+	
+	% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+
+
+% % ********************************************************************* %
+% %                           ENTRAÎNEMENT                                % 
+% % ********************************************************************* %
+% % ================ Métadonnées sur l'entraînement ===================== %
+
+% \titreEntrainementFacultatif	{Valeurs moyennes \textit{bis et repetita}}
+% \hauteurLargeurCadreReponse		{7mm}{6.75cm}
+% \dureeResolutionFacultative		{3} % 1, 2, 3 ou 4
+% \basiqueEtTransversal 			{N}
+% \calculALaMain					{Y}
+% \nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+% \avecPlusieursQuestions			{Y} % Y ou N
+% \initialisationEntrainement
+% % ===================================================================== %
+
+% % 		  Insertion d'une image en regard d'un texte
+% % mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% % --------------------------------------------------------- %
+% \pourcentageDeLaPartieAGauche   {0.55}
+% % --------------------------------------------------------- %
+% %                                                           %
+% % -------------------- Partie à gauche -------------------- %
+% %                                                           %
+%                                 \initialisationPartieGauche % 
+% %                                                           %
+% %                                                           %
+% \begin{minipage}{0.9\linewidth}
+% Un détecteur mesure pendant une durée $\tau = 10^6 T$ la moyenne temporelle d'un signal périodique $s\left(t \right)$ de période $T$. Cette moyenne est notée $\left< s\left( t \right) \right>_{\tau}$ et est définie telle que
+% $$
+% \left< s\left( t \right) \right>_{\tau} = \frac{1}{\tau} \int_t^{t+\tau} s\left( t \right)  \d{t}.
+% $$
+% \end{minipage}
+% % --------------------------------------------------------- %
+% %                                                           %
+% % -------------------- Partie à droite -------------------- %
+% %                                                           %
+% 								\initialisationPartieDroite %
+% %                                                           %
+% %                                                           %
+% \begin{minipage}{0.9\linewidth}
+% On donne les relations trigonométriques suivantes
+% 	\begin{itemize}
+% 		\item $\cos a \cos b = \frac{\cos\left( a-b \right)+\cos\left( a+b \right) }{2}$
+% 		\item $\sin a \sin b = \frac{\cos\left( a-b \right)-\cos\left( a+b \right) }{2}$
+% 		\item $\sin a \cos b = \frac{\sin\left( a-b \right)-\sin\left( a+b \right) }{2}$.
+% 	\end{itemize}
+% \end{minipage}
+% % --------------------------------------------------------- %
+% \finalisationDuPartageDePage %					
+% % --------------------------------------------------------- %
+
+% Calculer les moyennes temporelles des fonctions suivantes.
+
+
+
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+% %               Question                 %
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+% \begin{enonce}
+% $s_1\left( t \right) = \left( \cos \left( \omega_0 t + \varphi_1 \right) + \cos \left( \omega_0 t + \varphi_2  \right) \right)^2 $
+% \end{enonce}
+
+% \reponse{}
+
+% \begin{corrige}
+	
+% \end{corrige}
+
+% % ************************************** %
+
+
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+% %               Question                 %
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+% \begin{enonce}
+% $s_2\left( t \right) = \left( A\cos \left( 3\omega_0 t + \varphi_1 \right) + A\cos \left( \omega_0 t + \varphi_2  \right) \right)^2 $
+% \end{enonce}
+	
+% \reponse{}
+	
+% \begin{corrige}
+
+% \end{corrige}
+
+% % ************************************** %
+
+
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+% %               Question                 %
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+% \begin{enonce}
+% $s_3\left( t \right) = \left( B\cos \left( 5\omega_0 t + \varphi_1 \right) + B\cos \left( 5\omega_0 t + \varphi_1  \right) \right)^2 $
+% \end{enonce}
+		
+% \reponse{$S_1^2/2$}
+			
+% \begin{corrige}
+% 	Comme $\cos \left( a+a \right) =  \cos a \cos a - \sin a \sin a$ et $\cos \left( a-a \right) =  \cos a \cos a + \sin a \sin a$ alors $$\cos^2 a = \frac{1}{2}\left( 1 + \cos\left( 2a \right) \right) \quad \text{et donc}$$
+% 	\begin{align*}
+% 		\left< s_3\left( x,t \right) \right>_{\tau} &= \frac{1}{\tau} \int_t^{t+\tau} S_1^2 \cos^2 \left( \omega_1 t - k_1 x \right) \d{t} = \frac{1}{\tau} \frac{S_1^2}{2} \left(\left[1\right]^{t+\tau}_{t} + \frac{1}{2\omega_1}\left[\sin\left( 2 \omega_1 t - 2 k_1 x \right)\right]^{t+\tau}_{t} \right)\\
+% 		&= \frac{1}{\tau} \frac{S_1^2}{2} \left(\tau + \frac{1}{2\omega_1}\left(\sin\left( 2 \omega_1 \left(t+\tau\right) - 2 k_1 x \right)-\sin\left( 2 \omega_1 t - 2 k_1 x \right)\right)\right).
+% 	\end{align*}
+% 	On constate que $\sin\left( 2 \omega_1 \left(t+\tau\right) - 2 k_1 x \right) = \sin\left( 2 \omega_1 \left( t+10^6T_3 \right) - 2 k_1 x \right) = \sin\left( 2 \omega_1 t - 2 k_1 x \right)$, avec $T_3 = \frac{2\pi}{2\omega_1}$, donc
+% 	$$
+% 	\left< s_3\left( x,t \right) \right>_{\tau} = \frac{1}{\tau} \frac{S_1^2}{2} \tau = \frac{S_1^2}{2}.
+% 	$$
+% \end{corrige}
+
+% % ************************************** %
+
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+% %               Question                 %
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+% \begin{enonce}
+% 	$s_4\left( t \right) = \left( A\cos \left( 2023\omega_0 t + \varphi_1 \right) + B\sin \left( 2024\omega_0 t + \varphi_2  \right) \right)^2 $
+% \end{enonce}
+			
+% 	\reponse{}
+				
+% 	\begin{corrige}
+		
+
+% 	\end{corrige}
+	
+% % ************************************** %
+
+
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+% %               Question                 %
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+% \begin{enonce}
+% 	$s_5\left( t \right) = \left( \frac{A}{4} \sin \left( \frac{\omega_0}{2} t + \varphi_0 \right) + \frac{A}{2}  \sin \left( \frac{\omega_0}{2} t + \varphi_0  \right) \right)^2 $
+% \end{enonce}
+			
+% 	\reponse{}
+				
+% 	\begin{corrige}
+		
+
+% 	\end{corrige}
+
+% % ************************************** %
+
+
+% % =============================================================================== %
+% \finEntrainement
+% % =============================================================================== %
+
+
+
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Valeurs moyennes, le retour}
+\hauteurLargeurCadreReponse		{6mm}{7cm}
+\dureeResolutionFacultative		{2} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{Y}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.57}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+\begin{minipage}{0.9\linewidth}
+Les moyennes temporelles des fonctions cosinus et sinus pour un grand nombre de périodes sont telles que :
+$$\left<A \cos(a \omega t + b)\right> = 0 \quad \text{et} \quad \left<A \sin(a \omega t + b)\right> = 0$$
+avec $A$, $a$, $\omega$ et $b$ des constantes.
+\end{minipage}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+								\initialisationPartieDroite %
+%                                                           %
+%                                                           %
+\begin{minipage}{0.9\linewidth}
+On donne les relations trigonométriques suivantes
+	\begin{itemize}
+		\item $\cos a \cos b = \frac{\cos\left( a-b \right)+\cos\left( a+b \right) }{2}$
+		\item $\sin a \sin b = \frac{\cos\left( a-b \right)-\cos\left( a+b \right) }{2}$
+		\item $\sin a \cos b = \frac{\sin\left( a-b \right)-\sin\left( a+b \right) }{2}$.
+	\end{itemize}
+\end{minipage}
+% --------------------------------------------------------- %
+\finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+
+Calculer la moyenne temporelle sur un grand nombre de périodes des fonctions ci-dessous.
+
+\medskip
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+$\left<\left[\cos\left(\omega_0 t + \varphi_1\right) + \cos\left(\omega_0 t + \varphi_2\right)\right]^2\right>$
+\end{enonce}
+	
+\reponse{$1+\cos\left(\varphi_1-\varphi_2\right)$}
+	
+\begin{corrige}
+	$\left<\left[\cos\left(\omega_0 t + \varphi_1\right) + \cos\left(\omega_0 t + \varphi_2\right)\right]^2\right>$
+	
+	$=\left<\left[\cos(\omega_0 t + \varphi_1)\right]^2 + 2\cos(\omega_0 t + \varphi_1) \cos(\omega_0 t + \varphi_2) + \left[\cos(\omega_0 t + \varphi_2)\right]^2 \right>$
+
+	$=\left<\frac{\cos(0)+\cos(2\omega_0 t + 2\varphi_1)}{2}\right> + \left<2 \frac{\cos(\varphi_1-\varphi_2)+\cos(2\omega_0 t + \varphi_1+ \varphi_2)}{2}\right> + \left<\frac{\cos(0)+\cos(2\omega_0 t + 2\varphi_2)}{2}\right>$
+
+	$=\frac{1}{2}+0+\cos(\varphi_1-\varphi_2)+0+\frac{1}{2}+0=1+\cos\left(\varphi_1-\varphi_2\right)$
+\end{corrige}
+
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+$\left<\left[A\cos(3\omega_0 t + \varphi_1) + A\cos(\omega_0 t + \varphi_2)\right]^2\right>$
+\end{enonce}
+		
+\reponse{$A^2$}
+		
+\begin{corrige}
+	$\left<\left[A\cos(3\omega_0 t + \varphi_1) + A\cos(\omega_0 t + \varphi_2)\right]^2\right>$
+	
+	$=\left<\left[A\cos(3\omega_0 t + \varphi_1)\right]^2 + 2 A^2 \cos(3\omega_0 t + \varphi_1) \cos(\omega_0 t + \varphi_2) + \left[A\cos(\omega_0 t + \varphi_2)\right]^2 \right>$
+
+	$=\left<A^2 \frac{\cos(0)+\cos(6\omega_0 t + 2\varphi_1)}{2}\right> + \left<2 A^2 \frac{\cos(2\omega_0 t+\varphi_1-\varphi_2)+\cos(4\omega_0 t + \varphi_1+ \varphi_2)}{2}\right> + \left<A^2 \frac{\cos(0)+\cos(2\omega_0 t + 2\varphi_2)}{2}\right>$
+
+	$=A^2 \left[\frac{1}{2}+0+0+0+\frac{1}{2}+0 \right]=A^2$
+\end{corrige}
+	
+% ************************************** %
+
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+% %               Question                 %
+% % ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+% \begin{enonce}
+% $\left<\left[B\cos(5\omega_0 t + \varphi_1) + B\cos(5\omega_0 t + \varphi_1)\right]^2\right>$
+% \end{enonce}
+		
+% \reponse{$2B^2$}
+		
+% \begin{corrige}
+% 	$\left<\left[B\cos(5\omega_0 t + \varphi_1) + B\cos(5\omega_0 t + \varphi_1)\right]^2\right>$
+	
+% 	$=\left<\left[2B\cos(5\omega_0 t + \varphi_1) \right]^2\right>$
+
+% 	$=\left<4B^2 \frac{\cos(0)+\cos(10\omega_0 t + 2\varphi_1)}{2}\right>$
+
+% 	$=4B^2 \left[\frac{1}{2}+0\right]=2B^2$
+% \end{corrige}
+	
+% % ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+$\left<\left[A\cos(2023\omega_0 t + \varphi_1) + B\sin(2024\omega_0 t + \varphi_2)\right]^2\right>$
+\end{enonce}
+		
+\reponse{$\frac{A^2+B^2}{2}$}
+		
+\begin{corrige}
+	$\left<\left[A\cos(2023\omega_0 t + \varphi_1) + B\sin(2024\omega_0 t + \varphi_2)\right]^2\right>$
+	
+	$=\left<\left[A\cos(2023\omega_0 t + \varphi_1)\right]^2 + 2 AB \cos(2023\omega_0 t + \varphi_1) \sin(2024\omega_0 t + \varphi_2) + \left[B\sin(2024\omega_0 t + \varphi_2)\right]^2 \right>$
+
+	$=\left<A^2 \frac{\cos(0)+\cos(4046\omega_0 t + 2\varphi_1)}{2}\right> + \left<2 AB \frac{\sin(\omega_0 t-\varphi_1+\varphi_2)+\sin(4047\omega_0 t + \varphi_1+ \varphi_2)}{2}\right> + \left<B^2 \frac{\cos(0)-\cos(4048\omega_0 t + 2\varphi_2)}{2}\right>$
+
+	$=\left[\frac{A^2}{2}+0+0+0+\frac{B^2}{2}-0 \right]=\frac{A^2+B^2}{2}$
+\end{corrige}
+	
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+$\left<\left[\frac{A}{4}\sin\left(\frac{\omega_0}{2} t + \varphi_0\right) + \frac{A}{2}\sin\left(\frac{\omega_0}{2} t + 2\varphi_0\right)\right]^2\right>$
+\end{enonce}
+			
+\reponse{$\frac{A^2}{8} \left(\frac{5}{4}+\cos(\varphi_0)\right)$}
+			
+\begin{corrige}
+	$\left<\left[\frac{A}{4}\sin\left(\frac{\omega_0}{2} t + \varphi_0\right) + \frac{A}{2}\sin\left(\frac{\omega_0}{2} t + 2\varphi_0\right)\right]^2\right>$
+	
+	$=\left<\left[\frac{A}{4}\sin(\frac{\omega_0}{2} t + \varphi_0)\right]^2 + \frac{A^2}{4} \sin(\frac{\omega_0}{2} t + \varphi_0) \sin(\frac{\omega_0}{2} t + 2\varphi_0) + \left[\frac{A}{2} \sin(\frac{\omega_0}{2} t + 2\varphi_0)\right]^2 \right>$
+
+	$=\left<\frac{A^2}{16} \frac{\cos(0)-\cos(\omega_0 t + 2\varphi_0)}{2}\right> + \left< \frac{A^2}{4} \frac{\cos(\varphi_0)-\cos(\omega t +3\varphi_0)}{2}\right> + \left<\frac{A^2}{4} \frac{\cos(0)-\cos(\omega_0 t + 4\varphi_0)}{2}\right>$
+
+	$=\left[\frac{A^2}{32}-0+\frac{A^2}{8}\cos(\varphi_0)-0+\frac{A^2}{8}-0 \right]=\frac{A^2}{8} \left(\frac{1}{4}+\cos(\varphi_0)+1\right)=\frac{A^2}{8} \left(\frac{5}{4}+\cos(\varphi_0)\right)$
+\end{corrige}
+		
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+\clearpage
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Bataille de contraste}
+\hauteurLargeurCadreReponse		{6mm}{5cm}
+\dureeResolutionFacultative		{2} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{N}
+\calculALaMain					{Y}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{N} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.4}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+
+On mesure les maxima et les minima d'éclairements de différentes figures d'interférences. Quelle est celle qui présente le plus fort contraste $C = \frac{I_{\text{max}}-I_{\text{min}}}{I_{\text{max}}+I_{\text{min}}}$ ?
+
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+\initialisationPartieDroite %
+%                                                           %
+%                                                           %
+\begin{itemize}[itemindent=2em]
+	\item[\reponseA{}] $I_{\text{max}}=\SI{10.0e6}{W \cdot m^{-2}}$ ; $I_{\text{min}}=\SI{1.00}{MW \cdot m^{-2}}$
+	\item[\reponseB{}] $I_{\text{max}}=\SI{660}{mW \cdot mm^{-2}}$ ; $I_{\text{min}}=\SI{0.220}{kW \cdot dm^{-2}}$
+	\item[\reponseC{}] $I_{\text{max}}=\SI{5.00}{mW \cdot mm^{-2}}$ ; $I_{\text{min}}=\SI{2.00}{mW \cdot cm^{-2}}$
+	\item[\reponseD{}] $I_{\text{max}}=\SI{72.0}{pW \cdot \micro m^{-2}}$ ; $I_{\text{min}}=\SI{3.00}{MW \cdot km^{-2}}$.
+\end{itemize}
+% --------------------------------------------------------- %
+\finalisationDuPartageDePage %					
+% --------------------------------------------------------- %	
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	
+\end{enonce}
+	
+	\reponse{\reponseC{}}
+	
+	\begin{corrige}
+		% $$
+		\begin{align*}
+			\text{\reponseA{}} \quad C &= \frac{ \SI{10.0e6}{W \cdot m^{-2}} - \SI{1.00}{MW \cdot m^{-2}} }{ \SI{10.0e6}{W \cdot m^{-2}} + \SI{1.00}{MW \cdot m^{-2}} } = \frac{ \SI{1.00e7}{W \cdot m^{-2}} -  \SI{1.00e6}{W \cdot m^{-2}}}{\SI{1.00e7}{W \cdot m^{-2}} +  \SI{1.00e6}{W \cdot m^{-2}}} = \SI{81.8}{}\\
+			\text{\reponseB{}} \quad C &= \frac{\SI{660}{mW \cdot mm^{-2}} - \SI{0.220}{kW \cdot dm^{-2}}}{\SI{660}{mW \cdot mm^{-2}} + \SI{0.220}{kW \cdot dm^{-2}}} = \frac{ \SI{6.60e5}{W \cdot m^{-2}} -  \SI{2.20e4}{W \cdot m^{-2}}}{\SI{6.60e5}{W \cdot m^{-2}} +  \SI{2.20e4}{W \cdot m^{-2}}} = \SI{93.5}{}\\
+			\text{\reponseC{}} \quad C &= \frac{\SI{5.00}{mW \cdot mm^{-2}} - \SI{2.00}{mW \cdot cm^{-2}}}{\SI{5.00}{mW \cdot mm^{-2}} + \SI{2.00}{mW \cdot cm^{-2}}} = \frac{ \SI{5.00e3}{W \cdot m^{-2}} -  \SI{20.0}{W \cdot m^{-2}}}{\SI{5.00e3}{W \cdot m^{-2}} +  \SI{20.0}{W \cdot m^{-2}}} = \SI{99.2}{}\\
+			\text{\reponseD{}} \quad C &= \frac{\SI{72.0}{pW \cdot \micro m^{-2}} - \SI{3.00}{MW \cdot km^{-2}}}{\SI{72.0}{pW \cdot \micro m^{-2}} + \SI{3.00}{MW \cdot km^{-2}}} = \frac{ \SI{72.0}{W \cdot m^{-2}} -  \SI{3.00}{W \cdot m^{-2}}}{\SI{72.0}{W \cdot m^{-2}} +  \SI{3.00}{W \cdot m^{-2}}} =\SI{92.0}{}.
+		\end{align*}
+
+			%  \\
+
+			% 
+		% $$
+
+	\end{corrige}
+	
+% ************************************** %
+
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+\titreEntrainementFacultatif	{\'Etats isophases}
+\hauteurLargeurCadreReponse		{6mm}{2cm}
+\dureeResolutionFacultative		{1} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{N}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+Une source émet deux vibrations lumineuses $s\left(x,t\right)=S_0 \; \cos \left(\omega t - k x\right)$ et $s'\left(x,t\right)=S_0 \; \cos \left(\omega t' - k x'\right)$ de période temporelle $T$ (associée à la pulsation $\omega$) et de longueur d'onde $\lambda$ (associée au nombre d'onde $k$).
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Exprimer le déphasage $\Delta \varphi$ entre $s$ et $s'$ pour $t=t'=t_0$.
+	\end{enonce}
+	
+	\reponse{$k\left(x'-x\right)$}
+	
+	\begin{corrige}
+	$\Delta \varphi = \omega t_0 - k x - \left( \omega t_0 - k x' \right) = k \left(x-x'\right)$
+	\end{corrige}
+	
+	% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Comment s'expriment les écarts de positions $\Delta x_n$ tels que $s$ et $s'$ sont isophases ? 
+	\begin{listeQCM3Colonnes}
+	\item $\Delta x_n = n \lambda$
+	\item $\Delta x_n = \left(n+\frac{1}{2}\right) \lambda$
+	\item $\Delta x_n = n \frac{\lambda}{2}$
+	% \item $\Delta x_n = \left(n+\frac{3}{4}\right) \lambda$
+	\end{listeQCM3Colonnes}
+	\smallskip
+\end{enonce}
+
+\reponse{\reponseA{}}
+
+\begin{corrige}
+	Le déphasage $\Delta \varphi_n$ entre deux positions successives est constant si $k \left(x_n-x_{n+1}\right)= 0 \mod 2\pi = n 2\pi$. Autrement dit : $\Delta x_n = n\frac{2\pi}{k}= n\frac{2\pi \lambda}{2\pi}= n \lambda$. Pour un instant donné, les positions distantes d'un nombre entier de fois la longueur d'onde de la vibration lumineuse sont en phases : réponse \reponseA{}.
+\end{corrige}
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Exprimer le déphasage $\Delta \varphi$ entre $s$ et $s'$ pour $x=x'=x_0$.
+	\end{enonce}
+	
+	\reponse{$\omega \left(t'-t \right)$}
+	
+	\begin{corrige}
+		$\Delta \varphi = \omega t - k x_0 - \left( \omega t' - k x_0 \right) = \omega \left(t-t'\right)$
+	\end{corrige}
+	
+	% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Comment s'expriment les écarts d'instants $\Delta t_n$ tels que $s$ et $s'$ sont isophases ? 
+	\begin{listeQCM3Colonnes}
+	\item $\Delta t_n = n T$
+	\item $\Delta t_n = \left(n+\frac{1}{2}\right) T$
+	\item $\Delta t_n = n \frac{T}{2}$
+	% \item $\Delta t_n = \left(n+\frac{3}{4}\right) T$
+	\end{listeQCM3Colonnes}
+	\smallskip
+\end{enonce}
+
+\reponse{\reponseA{}}
+
+\begin{corrige}
+	Le déphasage $\Delta \varphi_n$ entre deux instants successifs est constant si $\omega \left(t_n-t_{n+1}\right)= 0 \mod 2\pi = n 2\pi$. Autrement dit : $\Delta t_n = n\frac{2\pi}{\omega}= n\frac{2\pi T}{2\pi}= n T$. Pour une position donnée, les instants séparés d'un nombre entier de fois la période de la vibration lumineuse sont en phases : réponse (a).
+\end{corrige}
+
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+
+
+
+
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+\sectionFicheEntrainement{\'Etudes d'éclairements}
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Fentes d'Young}
+\hauteurLargeurCadreReponse		{6mm}{5cm}
+\dureeResolutionFacultative		{1} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{Y}
+\calculALaMain					{Y}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.6}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+L'éclairement $I(x)$ obtenu en un point $\ptM$ d'un écran à une distance $D$ de fentes d'Young est représenté sur la figure ci contre. Il est tel que $I(x)=2I_0 \left(1+\cos\left(\frac{2\pi nax}{\lambda D}\right)\right)$ avec $a$ la distance entre les deux fentes, $n$ l'indice du milieu et $\lambda$ la longueur d'onde du signal.
+
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+                                \initialisationPartieDroite %
+%                                                           %
+%                                                           %
+\begin{center}
+	\subimport{_images/}{2_interférences_fentes_Young_FBA.tex}
+\end{center}
+% --------------------------------------------------------- %
+                               \finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+
+
+
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Identifier grâce à la formule fournie l'interfrange $i$.
+\begin{listeQCM4Colonnes}
+	\item $i=\frac{na}{\lambda D}$
+	\item $i=\frac{2\pi na}{\lambda D}$
+	\item $i=\frac{\lambda D}{na}$
+	\item $i=\frac{\lambda D}{2\pi na}$
+\end{listeQCM4Colonnes}
+\bigskip
+\end{enonce}
+
+
+
+\reponse{\reponseC{}}
+
+\begin{corrige}
+	$I(\ptM)=2I_0 \left(1+\cos\left(\frac{2\pi x}{i}\right)\right)$, on identifie donc $i=\frac{\lambda D}{na}$.
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Mesurer sur la figure l'interfrange $i$.
+\end{enonce}
+
+\reponse{$\num{1.3}\si{\centi\metre}$}
+
+%\begin{corrige}
+%\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+En déduire $a$, sachant que $n=\num{1.0}$ ; $D=\num{1.0}\si{\metre}$ et $\lambda=\num{630}\si{nm}$.
+\end{enonce}
+
+\reponse{$\num{48}\si{\mu\metre}$}
+
+\begin{corrige}
+	$a=\frac{\lambda D}{ni}$
+
+	Donc $a=\frac{\num{630}.10^{-9} \times \num{1}}{\num{1.0} \times \num{1.3}.10^{-2}}=\num{48}\si{\mu\metre}$.
+\end{corrige}
+
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Doublet spectrale}
+\hauteurLargeurCadreReponse		{6mm}{4cm}
+\dureeResolutionFacultative		{1} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{N}
+\calculALaMain					{Y}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.7}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+On éclaire des fentes d'Young verticales espacées d'une distance $a$ avec un doublet spectral de longueurs d'onde $\lambda_1$ et $\lambda_2$ (on pose $\Delta \lambda=\lambda_2 -\lambda_1$ et $\lambda_{moy}=\frac{\lambda_2-\lambda_1}{2}$). L'éclairement $I(x)$ obtenu en un point $\ptM$ d'un écran à une distance $D$ des fentes est représenté sur la figure ci contre. Il est tel que :
+$$ I(x)=I_{moy} \left[1+C(x)\cos\left(\frac{2\pi nax}{\lambda_{moy} D}\right)\right] $$ avec $C(x)=\cos\left(\frac{\pi nax \Delta \lambda}{\lambda_{moy}^2 D}\right)$ qu'on appelle le terme de contraste.
+
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+                                \initialisationPartieDroite %
+%                                                           %
+%                                                           %
+\begin{center}
+	\subimport{_images/}{3_battements_FBA.tex}
+\end{center}
+% --------------------------------------------------------- %
+                               \finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+
+
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Identifier grâce à la formule fournie, la période $X$ du terme de contraste.
+\begin{listeQCM4Colonnes}
+	\item $X=\frac{\lambda_{moy}^2 D}{na\Delta \lambda}$
+	\item $X=\frac{2\lambda_{moy}^2 D}{na\Delta \lambda}$
+	\item $X=\frac{\lambda_{moy}^2 D}{2na\Delta \lambda}$
+	\item $X=\frac{\lambda_{moy}^2 D}{2\pi na\Delta \lambda}$
+\end{listeQCM4Colonnes}
+\bigskip
+\end{enonce}
+
+\reponse{\reponseB{}}
+
+\begin{corrige}
+	$C(x)=\cos\left(\frac{2\pi x}{X}\right)$, on identifie donc $X=\frac{2\lambda_{moy}^2 D}{na\Delta \lambda}$.
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+On rappelle que $i=\frac{\lambda_{moy} D}{na}$. Déterminer graphiquement l'interfrange $i$.
+\end{enonce}
+
+\reponse{$\num{0.57}\si{\centi\metre}$}
+
+%\begin{corrige}
+%\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	En déduire $\lambda_{moy}$, sachant que $n=\num{1.0}$ ; $D=\num{1.5}\si{\metre}$ et $a=\num{0.20}\si{\milli\metre}$. 
+\end{enonce}
+
+\reponse{$\num{0.76}\si{\mu\metre}$}
+
+\begin{corrige}
+	$\lambda_{moy}=\frac{ina}{D}$
+
+	Donc $\lambda_{moy}=\frac{\num{0.57}.10^{-3} \times \num{1.0} \times \num{0.20}.10^{-3}}{\num{1.5}}=\num{0.76}\si{\mu\metre}$.
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Déterminer graphiquement la période $X$ du terme de contraste.
+\end{enonce}
+
+\reponse{$\num{6.4}\si{\centi\metre}$}
+
+%\begin{corrige}
+%\end{corrige}
+
+% ************************************** %
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+En déduire l'écart spectrale $\Delta \lambda$ du doublet.
+\end{enonce}
+	
+\reponse{$\num{0.14}\si{\mu\metre}$}
+	
+\begin{corrige}
+	$\Delta \lambda=\frac{2\lambda_{moy}^2 D}{naX}$
+
+	Donc $\Delta \lambda=\frac{2 \times (\num{0.76}.10^{-6})^2 \times \num{1.5}}{\num{1.0}  \times \num{0.20}.10^{-3} \times \num{6.4}.10^{-2}}=\num{0.14}\si{\mu\metre}$.
+\end{corrige}
+	
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+
+
+
+
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+\sectionFicheEntrainement{Interférométrie}
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+Dans cette section nous exploiterons les 3 figures d'interférences suivantes.
+\bigskip
+\begin{center}
+	\subimport{_images/}{mach-zehnder_figure_ECA_v1.tex}
+\end{center}
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+\titreEntrainementFacultatif	{Fentes d'Young}
+\hauteurLargeurCadreReponse		{6mm}{2.5cm}
+\dureeResolutionFacultative		{3} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{Y}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.42}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+On éclaire des fentes d'Young en faisceau parallèle comme présenté dans le schéma ci-contre.
+
+Pour les fentes d'Young, la différence de marche entre les deux rayons 1 et 2 vaut : $\delta_{\ptS \ptM}=\mathcal{L}_{\ptS \ptM,2}-\mathcal{L}_{\ptS \ptM,1}=\mathcal{L}_{\ptS_2 \ptH}$.
+
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+\initialisationPartieDroite %
+%                                                           %
+%                                                           %
+\begin{center}
+	\subimport{_images/}{4_fentes_Young_FBA.tex}
+\end{center}
+% --------------------------------------------------------- %
+                               \finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+\begin{enonce}
+	En étudiant le triangle $\ptS_1 \ptS_2 \ptH$, exprimer la longueur $\ptS_2 \ptH$ en fonction de $\theta_1$ et de $a$.
+\end{enonce}
+
+\reponse{$a \sin(\theta_1)$}
+
+\begin{corrige}
+	$\sin(\theta_1)=\frac{\ptS_2 \ptH}{a}$ donc $\ptS_2 \ptH = a \sin(\theta_1)$
+\end{corrige}
+
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+\begin{enonce}
+	En étudiant un autre triangle, exprimer l'angle $\theta_1$ en fonction de $y$ et de $f_2$.
+\end{enonce}
+
+\reponse{$\arctan(\frac{y}{f_2})$}
+
+\begin{corrige}
+	A l'aide du tracé en pointillé, on obtient un triangle avec : $\tan(\theta_1)=\frac{y}{f_2}$. On en déduit $\theta_1=\arctan(\frac{y}{f_2})$.
+\end{corrige}
+
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+\begin{enonce}
+	Soit $\theta_1\ll1$. Exprimer $\delta_{\ptS \ptM}$ en fonction de $a$, $y$ et $f_2$ en utilisant les développement limités suivants :
+	$
+	\cos(x)=1-\frac{x^2}{2}+o(x^3) \quad \text{;} \quad 
+	\sin(x)=x-\frac{x^3}{6}+o(x^{4}) \quad \text{;} \quad 
+	\tan(x)=x+\frac{x^3}{3}+o(x^{4})$.
+\end{enonce}
+
+\reponse{$\frac{nay}{f_2}$}
+
+\begin{corrige}
+	On sait que $\delta_{\ptS \ptM}=\mathcal{L}_{\ptS_2 \ptH}=n \ptS_2 \ptH=na \sin(\theta_1)$.
+
+	A l'ordre 1, $\sin(\theta_1)=\theta_1$ et $\tan(\theta_1)=\theta_1=\frac{y}{f_2}$.
+
+	Donc : $\delta_{\ptS \ptM}=\frac{nay}{f_2}$.
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+\begin{enonce}
+	Exprimer l'interfrance $i$ de la figure d'interférence au niveau de l'écran, sachant que l'éclairement y est tel que $I = 2I_0\left( 1 + \cos\left( \frac{2 \pi}{\lambda} \delta_{\ptS \ptM} \right) \right) = 2 I_0 \left( 1 + \cos\left(  2\pi\frac{y}{i} \right) \right)$.
+\end{enonce}
+
+\reponse{$\frac{f_2 \lambda}{na}$}
+
+\begin{corrige}
+	En identifiant, on a : $\frac{y}{i}=\frac{\delta_{\ptS \ptM}}{\lambda}=\frac{nay}{f_2 \lambda}$.
+
+	Donc : $i=\frac{\lambda f_2}{na}$.
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Quelle est la figure d'interférence observée sur l'écran ?
+	\begin{listeQCM3Colonnes}
+		\item Figure 1
+		\item Figure 2
+		\item Figure 3
+		\end{listeQCM3Colonnes}
+		\smallskip
+\end{enonce}
+	
+	\reponse{Figure 2}
+	
+	\begin{corrige}
+		L'éclairement ne dépend que de la variable $y$, ainsi pour une valeur de $y$ fixée l'éclairement doit être constant, ce qui est seulement le cas pour la figure 2.
+	\end{corrige}
+	
+% ************************************** %
+
+% =============================================================================== %
+\pauseEntrainement
+% =============================================================================== %
+
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.42}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+On décide de décaler la source ponctuelle d'une longueur $y_1$.
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+\initialisationPartieDroite %
+%                                                           %
+%                                                           %
+\begin{center}
+	\subimport{_images/}{4_fentes_Young_décalé_FBA.tex}
+\end{center}
+% --------------------------------------------------------- %
+                               \finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+% =============================================================================== %
+\repriseEntrainement
+% =============================================================================== %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+\begin{enonce}
+		Sans refaire entièrement les calculs et par un raisonnement analogue aux questions précédentes, exprimer la nouvelle différence de marche $\delta'_{\ptS \ptM}$ pour ce montage.
+\end{enonce}
+
+\reponse{$\frac{nay}{f_2}+\frac{nay_1}{f_1}$}
+
+%\begin{corrige}
+%\end{corrige}
+
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Interféromètre de Mach-Zehnder}
+\hauteurLargeurCadreReponse		{6mm}{2.5cm}
+\dureeResolutionFacultative		{3} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{N}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.56}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+On a positionné une lame d'épaisseur $e$ et une lame prismatique d'épaisseur $e' = e - \alpha y$, toutes deux d'indice $n$, au niveau des bras d'un interféromètre de Mach-Zehnder (on ne tiendra pas compte de la réfraction en sortie de la lame prismatique).
+
+Les lames séparatrices LS atténuent l'éclairement $I_0$ des rayons d'un facteur $2$. On rappelle que l'amplitude $S_0$ d'un rayon est liée à son éclairement de telle manière que $I_0 \propto S^2_0$.
+
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+\initialisationPartieDroite %
+%                                                           %
+%                                                           %
+\begin{center}
+	\subimport{_images/}{mach-zehnder_ECA_v1.tex}
+\end{center}
+% --------------------------------------------------------- %
+\finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	De combien est atténuée l'amplitude d'un rayon en sortie de l'interféromètre?
+	\begin{listeQCM3Colonnes}
+		\item $1/2$
+		\item $1/4$
+		\item $1/8$
+		\end{listeQCM3Colonnes}
+\end{enonce}
+	
+	\reponse{\reponseB{}}
+	
+	\begin{corrige}
+		Dans l'interféromètre, un rayon est atténué par deux lames séparatrices, ainsi son éclairement en sortie $I'$ est tel que $I' = I_0/4$. Donc son amplitude en sortie $S'$ est telle que $S'^2 = S^2_0/4$, soit $S' = S_0/2$.
+	\end{corrige}
+	
+	% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer la différence de marche $\delta$ entre les deux bras. 
+\end{enonce}
+
+\reponse{$\left( n - 1 \right)\alpha y$}
+
+\begin{corrige}
+	En considérant $l$ la distance parcourue par un rayon dans un des bras de l'interféromètre de $\ptS$ jusqu'à l'écran, la différence de marche entre les rayons passant par les deux bras de l'interféromètre est
+	$$
+	\delta = n_{\text{air}}\left( l - e \right) + ne - \left( n_{\text{air}}\left( l - e' \right) + ne' \right) = l + \left( n - 1 \right)e -  l - \left( n - 1 \right)e'  = \left( n - 1 \right)\left( e - e' \right)  = \left( n - 1 \right)\alpha y.
+	$$
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer l'interfrance $i$ de la figure d'interférence au niveau de l'écran, sachant que l'éclairement y est tel que $I = \frac{I_0}{4}\left( 1 + \cos\left(  \Delta \varphi \right) \right) = \frac{I_0}{4}\left( 1 + \cos\left(  2\pi\frac{y}{i} \right) \right)$.
+\end{enonce}
+
+\reponse{$\frac{\lambda_0}{\left( n-1 \right)\alpha}$}
+
+\begin{corrige}
+Le déphasage entre les deux rayons est $
+\Delta \varphi = \frac{2\pi}{\lambda_0}\delta = \frac{2\pi}{\lambda_0}\left( n - 1 \right)\alpha y
+$.
+Par identification $2\pi\frac{y}{i} = \frac{2\pi}{\lambda_0}\left( n - 1 \right)\alpha y$, soit $i = \frac{\lambda_0}{\left( n-1 \right)\alpha}$.
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Quelle est la figure d'interférence observée sur l'écran ?
+	\begin{listeQCM3Colonnes}
+		\item Figure 1
+		\item Figure 2
+		\item Figure 3
+		\end{listeQCM3Colonnes}
+\end{enonce}
+	
+	\reponse{Figure 2}
+	
+	\begin{corrige}
+		L'éclairement ne dépend que de la variable $y$, ainsi pour une valeur de $y$ fixée l'éclairement doit être constant, ce qui est seulement le cas pour la figure 2.
+	\end{corrige}
+	
+% ************************************** %
+
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+\clearpage
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Interféromètre de Michelson en lame d'air}
+\hauteurLargeurCadreReponse		{6mm}{2.5cm}
+\dureeResolutionFacultative		{3} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{Y}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.7}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+Un interféromètre de Michelson en configuration lame d'air repose sur l'association de deux miroirs parfaitement réfléchissants $\mathcal{M}_1$ et $\mathcal{M}_2$, conformément au schéma représenté ci-contre.
+
+Pour le Michelson en configuration lame d'air, la différence de marche entre les deux rayons 1 et 2 vaut : $\delta_{\ptS \ptM}=\mathcal{L}_{\ptS \ptM,2}-\mathcal{L}_{\ptS \ptM,1}=\mathcal{L}_{\ptI \ptJ}+\mathcal{L}_{\ptJ \ptK}-\mathcal{L}_{\ptI \ptH}$.
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+                                \initialisationPartieDroite %
+%                                                           %
+%                                                           %
+\begin{center}
+	\subimport{_images/}{5_Michelson_lame_air_FBA.tex}
+\end{center}
+% --------------------------------------------------------- %
+                               \finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+
+
+
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer les longueurs $\ptI \ptJ$ et $\ptJ \ptK$ en fonction de $\theta$ et de $a$.
+\end{enonce}
+
+\reponse{$\frac{e}{\cos(\theta)}$}
+
+\begin{corrige}
+	$\cos(\theta)=\frac{e}{\ptI \ptJ}=\frac{e}{\ptJ \ptK}$
+
+	Donc $\ptI \ptJ = \ptJ \ptK = \frac{e}{\cos(\theta)}$
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer la longueur $\ptI \ptK$ en fonction de $\theta$ et de $e$.
+\end{enonce}
+
+\reponse{$2e \tan(\theta)$}
+
+\begin{corrige}
+	$\tan(\theta)=\frac{\frac{\ptI \ptK}{2}}{e}=\frac{\ptI \ptK}{2e}$
+
+	Donc $\ptI \ptK=2e\tan(\theta)$
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer la longueur $\ptI \ptH$ en fonction de $i$ et de $\ptI \ptK$.
+\end{enonce}
+
+\reponse{$\ptI \ptK \sin(\theta)$}
+	
+\begin{corrige}
+	$\sin(\theta)=\frac{\ptI \ptH}{\ptI \ptK}$
+
+	Donc $\ptI \ptH=\ptI \ptK \sin(\theta)$
+\end{corrige}
+
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer la longueur $\ptI \ptH$ en fonction de $\cos\theta$ et de $e$. \textit{Rappel :} $\cos^2 x+\sin^2 x =1$.
+\end{enonce}
+	
+\reponse{$2e \frac{1-\cos^2(\theta)}{\cos(\theta)}$}
+	
+\begin{corrige}
+	$\ptI \ptH=\ptI \ptK \sin(\theta)=2e\tan(\theta)\sin(\theta)=2e\frac{\sin^2(\theta)}{\cos(\theta)}$ car $\tan(\theta)=\frac{\sin(\theta)}{\cos(\theta)}$
+
+	Or $sin^2(\theta)=1-cos^2(\theta)$. Donc $\ptI \ptH=2e \frac{1-\cos^2(\theta)}{\cos(\theta)}$.
+\end{corrige}
+	
+% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+En déduire l'expression de la différence de marche $\delta_{\ptS \ptM}$ en fonction de $\cos\theta$ et de $e$.
+\end{enonce}
+		
+\reponse{$2ne \cos(\theta)$}
+		
+\begin{corrige}
+	$\delta_{\ptS \ptM}=\mathcal{L}_{\ptI \ptJ}+\mathcal{L}_{\ptJ \ptK}-\mathcal{L}_{\ptI \ptH}=n(\ptI \ptJ+\ptJ \ptK-\ptI \ptH)$
+
+	$= n\left( 2 \frac{e}{\cos(\theta)} - 2e \frac{1-\cos^2(\theta)}{\cos(\theta)} \right) = \frac{2ne}{\cos(\theta)} \left[1-\left(1-\cos^2(\theta)\right)\right]=\frac{2ne}{\cos(\theta)} \cos^2(\theta)=2ne\cos(\theta)$
+\end{corrige}
+		
+% ************************************** %
+
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Quelle est la figure d'interférence observée sur l'écran ?
+	\begin{listeQCM3Colonnes}
+		\item Figure 1
+		\item Figure 2
+		\item Figure 3
+		\end{listeQCM3Colonnes}
+\end{enonce}
+	
+\reponse{Figure 3}
+	
+\begin{corrige}
+		L'éclairement ne dépend que de la variable $\theta$, ainsi pour une valeur de $\theta$ fixée l'éclairement doit être constant, ce qui est seulement le cas pour la figure 3.
+\end{corrige}
+	
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Interféromètre de Fabry-Perot}
+\hauteurLargeurCadreReponse		{6mm}{3.5cm}
+\dureeResolutionFacultative		{2} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{N}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.72}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+On étudie deux rayons passant par un interféromètre de Fabry-Perot : deux miroirs séparés par un milieu indice $n$. À chaque interface du miroir l'amplitude du rayon est multipliée par un coefficient $r=1/\sqrt{2}$ ou un coefficient $t=1+r$ s'il est respectivement réfléchi ou transmis.
+
+On s'intéresse aux deux rayons ci-contre. En sortie de l'interféromètre, une lentille permet de les focaliser afin qu'ils interfèrent en un point $\ptM$ d'un écran. Avec $i$ l'angle de réflexion, $\widehat{\ptA \ptB \ptD}=2i$ et $\widehat{\ptB \ptE \ptH}=i$.
+
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+                                \initialisationPartieDroite %
+%                                                           %
+%                                                           %
+	\begin{center}
+		\subimport{_images/}{Fabry_Perot_ALD_v1.tex}
+	\end{center}
+% --------------------------------------------------------- %
+                               \finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Quel est le rapport des éclairements entre le rayons du bas et celui du haut ? 
+	
+	\begin{listeQCM3Colonnes}
+	\item $\frac{1}{2}$
+	\item $\frac{1}{4}$
+	\item $\frac{1}{8}$
+	\end{listeQCM3Colonnes}
+\end{enonce}
+
+\reponse{\reponseB{}}
+
+\begin{corrige}
+	La rayon inférieur d'amplitude $S'$ en $\ptM$ est réfléchi deux fois de plus que le rayon supérieur d'amplitude $S$ en $\ptM$. Ainsi $S' = r^2 S$. Comme l'éclairement $I$ est proportionnel au carré de l'amplitude, il vient que $I' = r^4 I$, soit
+	$$
+	I' = \left( \frac{1}{\sqrt{2}} \right)^4 I = \frac{I}{4} \qquad \text{donc} \qquad \frac{I'}{I} = \frac{1}{4}.$$
+	
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer la différence de marche $\delta_{\ptS\ptM}$
+\end{enonce}
+
+\reponse{$2ne \cos i$}
+
+\begin{corrige}
+$\delta_{\ptS\ptM}=\left(\ptS\ptM\right)_2 - \left(\ptS\ptM\right)_1 = \left(\ptS\ptB\right)+\left(\ptB\ptD\right)+\left(\ptD\ptE\right)+\left(\ptE\ptF\right) + \left(\ptF\ptM\right) - \big( \left(\ptS\ptB\right) + \left(\ptB\ptH\right) + \left(\ptH\ptC\right) + \left(\ptC\ptM\right) \big)$.\\
+Or par construction on sait que $\left(\ptE\ptF\right)=\left(\ptH\ptC\right)$ (projection orthogonale) et $\left(\ptC\ptM\right)=\left(\ptF\ptM\right)$ (lentille mince).\\
+De plus on remarque que $\left(\ptB\ptD\right)= \left(\ptD\ptE\right) = n\frac{e}{\cos i}$ ; et que $\left(\ptB\ptH\right) = n\ptB\ptE\sin i = 2n e \tan i \sin i = \frac{2ne \sin^2 i}{\cos i}$.\\
+Finalement :
+\begin{equation*}
+	\delta_{\ptS\ptM}= \left(\ptB\ptD\right)+\left(\ptD\ptE\right) - \left(\ptB\ptH\right) = n\frac{e}{\cos i} + n\frac{e}{\cos i} - \frac{2ne sin^2 i}{\cos i} = 2ne (\frac{1-\sin^2 i}{\cos i} ) = 2ne \cos i
+\end{equation*} 
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+% On rappelle que l'éclairement de la figure d'interférence vérifie la formule de Fresnel : $I\left(M\right)=2I_0 \left(1 + \cos \left( \frac{\delta}{2\pi} \right) \right)$.
+
+\begin{enonce}
+	 Quelles formes auront les franges d'interférences sachant que $I\left(\ptM\right)=2I_0 \left(1 + \cos \left( \frac{\delta}{2\pi} \right) \right)$ ?
+	\begin{listeQCM3Colonnes}
+	\item bandes rectilignes
+	\item carrés épais
+	\item cercles épais
+	\end{listeQCM3Colonnes}
+	\bigskip
+\end{enonce}
+
+\reponse{\reponseC{}}
+
+\begin{corrige}
+	Les franges d'interférences sont isophases, donc telles que $\delta$ soit constant, soit des cercles. On observe des anneaux d'égales inclinaison.
+\end{corrige}
+
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+
+\clearpage
+
+
+
+% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! % 
+%                              Gestion de la partie EXTRA de la fiche                              %
+% ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ % 
+
+\ficheExtraGeneral{fiche_OPT2_EXTRA_General_ECA_FBA_ALD_v2.tex}
+% \ficheExtraPourPSI{fiche_TMP1_EXTRA_PSI_TMP1_CBD_v1.tex}
+% \ficheExtraPourPC{fiche_TMP1_EXTRA_MP_MPI_PC_TMP1_CBD_v1.tex}
+% \ficheExtraPourMP{fiche_TMP1_EXTRA_MP_MPI_PC_TMP1_CBD_v1.tex}
+% \ficheExtraPourMPI{fiche_TMP1_EXTRA_MP_MPI_PC_TMP1_CBD_v1.tex}
+% \ficheExtraPourPT{}
+% \ficheExtraPourTSI{}
+% \ficheExtraPourATS{}
+% \ficheExtraPourTPC{}
+
+% ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ % 
+
+
+
+
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Ne pas modifier les lignes ci-dessous ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+% ---------------------------------------------------------------------------- %
+%                       Affichage des réponses mélangées                       %
+% ---------------------------------------------------------------------------- %
+\afficheReponsesMelangees
+% ---------------------------------------------------------------------------- %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\finFicheEntrainement                                                                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ======================================================= % 
+% ============== Gestion de la compilation ============== %
+% ======================================================= % 
+\ifdefined\mainIsLoaded\else
+\printReponsesEtCorriges
+\end{document}\fi
+% ======================================================= % 
+% ======================================================= % 

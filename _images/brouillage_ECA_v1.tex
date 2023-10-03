@@ -1,0 +1,71 @@
+\def\unit{1cm}
+
+    \begin{tikzpicture}[scale=0.7]
+      \centering
+
+      \def\Unit{1cm}
+      \def\Sample{1000} %Résolution des courbes
+
+      \def\longueur{7.5}
+      \def\xmax{450}
+      %Calcul du rapport entre le maximum selon l'axe x dans axis et la longueur de la figure
+      \pgfmathsetmacro\longueurRatio{-3.649660e-3*\longueur*\longueur*\longueur/\xmax +8.658687E-2*\longueur*\longueur/\xmax + 3.434615E-1*\longueur/\xmax}
+
+      \def\hauteur{4}
+      \def\ymax{2}
+      %Calcul du rapport entre le maximum selon l'axe y dans axis et la hauteur de la figure
+      \pgfmathsetmacro\hauteurRatio{-0.0088*\hauteur*\hauteur*\hauteur/\ymax + 0.1547*\hauteur*\hauteur/\ymax + 0.1231*\hauteur/\ymax}
+      
+
+      \begin{axis}[
+            width=\longueur*\Unit, height=\hauteur*\Unit,
+            xlabel={$x$(\SI{}{\micro\meter})},
+            ylabel={$I$(u.a.)},
+            axis lines=middle,
+            axis line style={->,>=latex,shorten >=-5mm},
+            grid=both,
+            grid style={draw=gray!25},
+            xtick={0,50,...,500},
+            % ytick={0,0.5,...,2},
+            xlabel near ticks,
+            ylabel near ticks,
+            ymax=\ymax,
+            xmax=\xmax,
+            ylabel style={at={(ticklabel* cs:1.2)},rotate=-90,anchor=south},
+            xlabel style={at={(axis description cs:1.05,-0.1)},anchor=west},
+            % view={0}{90},
+            % colormap/blackwhite,
+            % ytick style={draw=none},
+            % xtick style={draw=none},
+            % axis equal image
+            ]
+
+            \addplot [dashed, samples = \Sample, domain=0:450, y domain = 0:2.5, color=\AEFcouleurBleu] {1+cos(deg(2*pi*x/500))};
+            \addplot [dashed, samples = \Sample, domain=0:450, y domain = 0:2.5,color=\AEFcouleurBleu] {1-cos(deg(2*pi*x/500))};
+            \addplot [thick,samples = \Sample, domain=0:450, y domain = 0:2.5,color=\AEFcouleurRouge] {1+cos( deg(2*pi*x/25) )*cos(deg(2*pi*x/500))};
+
+            % \draw[dotted] (axis cs:100,1.25) -- (axis cs:100,2.25);
+            % \draw[dotted] (axis cs:400,1.25) -- (axis cs:400,2.25);
+            % \draw[<->, >=latex] (axis cs:100,2.25) -- (axis cs:400,2.25) node[midway,above]{$T/2$};
+
+         \end{axis}
+
+         \draw[dotted] let \n1 = {\longueurRatio*\Unit*125}, \n2 = {\hauteurRatio*\Unit*0}, \n3 =  {\hauteurRatio*\Unit*2.75}, in (\n1,\n2) -- (\n1,\n3);
+
+         \draw[dotted] let \n1 = {\longueurRatio*\Unit*375}, \n2 = {\hauteurRatio*\Unit*0}, \n3 =  {\hauteurRatio*\Unit*2.75}, in (\n1,\n2) -- (\n1,\n3);
+
+         \draw[<->,>=latex] let \n1 = {\longueurRatio*\Unit*125}, \n2 = {\longueurRatio*\Unit*375}, \n3 =  {\hauteurRatio*\Unit*2.75}, in (\n1,\n3) -- (\n2,\n3) node[midway,above]{\tiny$\lambda/2$};
+
+
+
+         \draw[dotted] let \n1 = {\longueurRatio*\Unit*150}, \n2 = {\hauteurRatio*\Unit*0}, \n3 =  {\hauteurRatio*\Unit*2.25}, in (\n1,\n2) -- (\n1,\n3);
+
+         \draw[dotted] let \n1 = {\longueurRatio*\Unit*350}, \n2 = {\hauteurRatio*\Unit*0}, \n3 =  {\hauteurRatio*\Unit*2.25}, in (\n1,\n2) -- (\n1,\n3);
+
+         \draw[<->,>=latex] let \n1 = {\longueurRatio*\Unit*150}, \n2 = {\longueurRatio*\Unit*350}, \n3 =  {\hauteurRatio*\Unit*2.25}, in (\n1,\n3) -- (\n2,\n3) node[midway,above]{\tiny$8\lambda'$};
+
+
+
+         
+
+    \end{tikzpicture}

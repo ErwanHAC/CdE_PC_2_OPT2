@@ -1,0 +1,105 @@
+\def\unit{1cm}
+\def\posLa{1.5cm}
+\def\posMa{-1.8cm}
+\def\posMb{4cm}
+\def\longL{0.6cm}
+\def\longLl{0.8cm}
+\def\epLab{3pt}
+\def\epLac{0.4cm}
+
+\def\RadiusVec{0.2}
+\tikzset{
+   pics/.cd,
+   vector out/.style={
+      code={
+         \draw[#1] (0,0)  circle (\RadiusVec) (45:\RadiusVec) -- (225:\RadiusVec) (135:\RadiusVec) -- (315:\RadiusVec);
+      }%end code   
+   }%end style
+}%end tikzset
+\tikzset{
+   pics/.cd,
+   vector in/.style={
+      code={
+        \draw[#1] (0,0)  circle (\RadiusVec);
+        \fill[#1] (0,0)  circle (.05);
+      }%end code   
+   }%end style
+}%end tikzset
+
+    \begin{tikzpicture}[decoration={markings, mark= at position 0.6 with {\arrow{latex}}}, scale=0.65]
+
+        \coordinate (S) at (0,0);
+        \coordinate (La) at (\posLa,0);
+        \coordinate (Ma) at (\posLa,\posMa);
+        \coordinate (Mb) at (\posLa+\posMb,0);
+        \coordinate (Lb) at (\posLa+\posMb,\posMa);
+        \coordinate (E) at (\posLa+\posMb+\posLa,\posMa);
+        \coordinate (Lc) at (\posLa+0.5*\posMb,\posMa);
+        \coordinate (Ld) at (\posLa+0.5*\posMb,0);
+
+        %Entrée
+        \draw[ultra thick,color=\AEFcouleurRouge,postaction={decorate}] (S) -- (La);
+        %Bras bas
+        \draw[ultra thick,color=\AEFcouleurRouge,postaction={decorate}] (La) -- (Ma);
+        \draw[ultra thick,color=\AEFcouleurRouge,postaction={decorate}] (Ma) -- (Lc);
+        \draw[ultra thick,color=\AEFcouleurRouge,postaction={decorate}] (Lc) -- (Lb);
+        %Bras haut
+        \draw[ultra thick,color=\AEFcouleurRouge,postaction={decorate}] (La) -- (Ld);
+        \draw[ultra thick,color=\AEFcouleurRouge,postaction={decorate}] (Ld) -- (Mb);
+        \draw[ultra thick,color=\AEFcouleurRouge,postaction={decorate}] (Mb) -- (Lb);
+        %Sortie
+        \draw[ultra thick,color=\AEFcouleurRouge,postaction={decoration={ markings,mark=at position 0.4 with {\arrow{latex}} },decorate} ]  (Lb) -- (E) node{\color{black}$\bullet$};
+
+        %Première lame séparatrice
+        \draw [dashed, very thick] ($(La)+(-\longLl,\longLl)$) -- ($(La)+(\longLl,-\longLl)$);
+
+        %Deuxième lame séparatrice
+        \draw [dashed, very thick] ($(Lb)+(-\longLl,\longLl)$) -- ($(Lb)+(\longLl,-\longLl)$);
+
+        %Miroir du haut
+        \draw ($(Mb)+(-\longLl,\longLl)$) -- ($(Mb)+(\longLl,-\longLl)$);
+        \fill[pattern= horizontal lines] ( $(Mb)+(-\longLl,\longLl)$ ) -- ($(Mb)+(\longLl,-\longLl)$) -- ( $(Mb)+(\longLl+\epLab,-\longLl+\epLab)$ ) -- ( $(Mb)+(-\longLl+\epLab,\longLl+\epLab)$ );
+        
+        %Miroir du bas
+        \draw ($(Ma)+(-\longLl,\longLl)$) -- ($(Ma)+(\longLl,-\longLl)$);
+        \fill[pattern= horizontal lines] ( $(Ma)+(-\longLl,\longLl)$ ) -- ($(Ma)+(\longLl,-\longLl)$) -- ( $(Ma)+(\longLl-\epLab,-\longLl-\epLab)$ ) -- ( $(Ma)+(-\longLl-\epLab,\longLl-\epLab)$ );
+
+        %Ecran
+        \draw[->,>=Latex] ($(E)-(0,1.25*\longL)$) -- ($(E)+(0,1.25*\longL)$) node[midway, right]{Écran};
+        \draw ($(E)+(0,1.25*\longL)$) node[above]{$y$};
+
+        %Construction
+        \draw[dotted, thick] ($(Lc)+(-\epLac,1.25*\longL)$) -- ($(Ld)+(-\epLac,1.25*\longL+10pt)$);
+        \draw[dotted, thick] ($(Lc)+(\epLac,-1.25*\longL)$) -- ($(Ld)+(\epLac,1.25*\longL+10pt)$);
+        \draw[<->,>=latex,color=\AEFcouleurBleu] ($(Ld)+(-\epLac,1.25*\longL+10pt)$) -- ($(Ld)+(\epLac,1.25*\longL+10pt)$) node[above, midway]{$e$};
+
+        % \draw[dotted, thick] ($(Lc)+(-\epLac,1.25*\longL)$) -- ($(E)+(0,1.25*\longL)$);
+        \draw[dotted, thick] ($(Lc)+(-\epLac,-1.25*\longL)$) -- ($(E)-(0,1.25*\longL)$);
+
+        \draw ($(E)-(0,1.25*\longL)$) node{$\bullet$};
+        \draw ($(E)-(0,1.25*\longL)$) node[above left,xshift=-3pt]{$\ptO$};
+
+        \path ($(E)-(0,1.25*\longL)$)  pic {vector in={line width=0.5pt}} node[right, xshift=5pt]{$x$};
+
+        \draw (S) node{$\bullet$};
+        \draw (S) node[left]{$\ptS$};
+
+        \draw (Mb) node[above right]{$\mathcal{M}_1$};
+        \draw (Ma) node[below left]{$\mathcal{M}_2$};
+
+        \draw (Mb) node[above right, xshift=30pt]{$n_{\text{air}}=1$};
+
+        \draw (La) node[above right]{LS$_1$};
+        \draw (Lb) node[below left]{LS$_2$};
+
+         %Lame haut
+        \draw ($(Ld)+(-\epLac,-1.25*\longL)$) -- ($(Ld)+(-\epLac,1.25*\longL)$) -- ($(Ld)+(\epLac,1.25*\longL)$) -- ($(Ld)+(\epLac,-1.25*\longL)$) -- ($(Ld)+(-\epLac,-1.25*\longL)$);
+
+         %Lame bas
+        \draw ($(Lc)+(-\epLac,-1.25*\longL)$) -- ($(Lc)+(-\epLac,1.25*\longL)$) -- ($(Lc)+(\epLac,-1.25*\longL)$) -- ($(Lc)+(-\epLac,-1.25*\longL)$);
+
+         %alpha
+         \draw let \p1=($(Lc)+(-\epLac,1.25*\longL)$), \p2 = ($(Lc)+(\epLac,-1.25*\longL)$), \n1 = {\x1+0.6*(\x2-\x1)}, \n2 = {\y1+0.6*(\y2-\y1)}, \n3 = {sqrt((\x1-\n1)^2+(\y1-\n2)^2)}, \n4 = {round(atan(\longL/\epLac))} , in (\n1,\n2) arc (-\n4:-85:\n3) node[midway,below]{$\alpha$};
+
+
+    \end{tikzpicture}

@@ -1,0 +1,110 @@
+\def\unit{1cm}
+
+
+\def\posxA{1.5cm}
+\def\posyA{-0.75cm}
+\def\longL{0.75cm}
+
+
+\def\RadiusVec{0.2}
+\tikzset{
+   pics/.cd,
+   vector out/.style={
+      code={
+         \draw[#1] (0,0)  circle (\RadiusVec) (45:\RadiusVec) -- (225:\RadiusVec) (135:\RadiusVec) -- (315:\RadiusVec);
+      }%end code   
+   }%end style
+}%end tikzset
+\tikzset{
+   pics/.cd,
+   vector in/.style={
+      code={
+        \draw[#1] (0,0)  circle (\RadiusVec);
+        \fill[#1] (0,0)  circle (.05);
+      }%end code   
+   }%end style
+}%end tikzset
+
+    \begin{tikzpicture}[decoration={markings, mark= at position 0.6 with {\arrow{latex}}},scale=0.6]
+
+        \coordinate (S) at (0,0);
+        \coordinate (A) at (\posxA,\posyA);
+        \coordinate (B) at (2*\posxA,2*\posyA);
+        \coordinate (C) at (2*\posxA+2.0cm,2*\posyA-1.0cm);
+        \coordinate (D) at (\posxA,3*\posyA);
+        \coordinate (E) at (2*\posxA,4*\posyA);
+        \coordinate (F) at (4.4cm,-3.7cm);
+        \coordinate (M1) at (\posxA,-0.25cm);
+        \coordinate (M2) at (2*\posxA,-0.25cm);
+        \coordinate (H) at (3.57cm,-1.8cm);
+        \coordinate (M) at (6.00cm,-3.7cm);
+        \coordinate (Y) at (1.75*\posxA,\posyA);
+        \coordinate (Z) at (0.66*\posxA,-4.0cm);
+
+        %Entrée
+        \draw[ultra thick, color=\AEFcouleurRouge,postaction={decorate}] (S) -- (A);
+        %Rayon sans réflexion
+        \draw[ultra thick, color=\AEFcouleurRouge,postaction={decorate}] (A) -- (B);
+        \draw[ultra thick, color=\AEFcouleurRouge,postaction={decorate}] (B) -- (C);
+ %       \draw[color=red,postaction={decorate}] (Len1) -- (M);
+  %      %Rayon avec réflexion
+        \draw[ultra thick, color=\AEFcouleurRouge,postaction={decorate}] (B) -- (D);
+        \draw[ultra thick, color=\AEFcouleurRouge,postaction={decorate}] (D) -- (E);
+        \draw[ultra thick, color=\AEFcouleurRouge,postaction={decorate}] (E) -- (F);
+    %    \draw[color=red,postaction={decorate}] (Lb2) -- (Len2);
+     %   \draw[color=red,postaction={decorate}] (Len2) -- (M);
+      %Sortie
+      \draw[ultra thick, color=\AEFcouleurRouge,postaction={decorate}] (C) -- (M);
+      \draw[ultra thick, color=\AEFcouleurRouge,postaction={decorate}] (F) -- (M);
+
+      %Construction
+      \draw[color=blue,very thick] (E) -- (H);
+
+
+        %Premier miroir
+        \draw [dashed, very thick] ($(A)+(0,1.0cm)$) -- ($(A)+(0,-3.0cm)$);
+
+        %Deuxième miroir
+        \draw [dashed, very thick] ($(B)+(0,1.75cm)$) -- ($(B)+(0,-2.25cm)$);
+        \draw[color=\AEFcouleurBleu,<->,>=latex] ($(D)+(0,-1.2cm)$) -- ($(D)+(1.5cm,-1.2cm)$);
+
+        %Lentille
+        \draw[thick, <->,>=latex] ($(C)+(0.5*\longL,\longL)$) -- ($(C)+(-1.2*\longL,-2.4*\longL)$);
+
+        %Points
+        \draw (S) node{$\bullet$};
+        \draw (S) node[left]{$\ptS$};
+
+        \draw (A) node{$\bullet$};
+        \draw (A) node[below left]{$\ptA$};
+
+        \draw (B) node{$\bullet$};
+        \draw (B) node[above left, yshift=5pt]{$\ptB$};
+
+        \draw (C) node{$\bullet$};
+        \draw (C) node[above, xshift=-2pt, yshift = 5pt]{$\ptC$};
+
+        \draw (D) node{$\bullet$};
+        \draw (D) node[left]{$\ptD$};
+
+        \draw (E) node{$\bullet$};
+        \draw (E) node[above left, yshift = 5pt]{$\ptE$};
+
+        \draw ($(A)+(0,1.0cm)$) node[above]{$\mathcal{M}_1$};
+        \draw ($(B)+(0,1.75cm)$) node[above]{$\mathcal{M}_2$};
+
+        \draw (H) node{$\bullet$};
+        \draw (H) node[above]{$\ptH$};
+
+        \draw (F) node{$\bullet$};
+        \draw (F) node[above,yshift=5pt]{$\ptF$};
+
+        \draw (M) node{$\bullet$};
+        \draw (M) node[right]{$\ptM$};
+
+        \draw ($0.5*(M1)+0.5*(M2)$) node{$n$};
+
+        \draw[color=\AEFcouleurBleu] ($0.5*(B)+0.5*(0,-2.25cm)+0.5*(A)+0.5*(0,-3.0cm)$) node{$e$};
+
+
+    \end{tikzpicture}
