@@ -1,0 +1,747 @@
+% ------------------------------------------------------------ %
+% Date : 17/06/2023
+% ------------------------------------------------------------ %
+
+% ------------------------------------------------------------ %
+% -----------------  Auteurs et relecteurs  ------------------ %
+% Auteur référent : ??
+% Auteur 1 : 
+% Auteur 2 : 
+% Auteur 3 : 
+% Auteur 4 : 
+% Relecteur I : 
+% Relecteur II.1 : 
+% Relecteur II.2 : 
+% ------------------------------------------------------------ %
+
+% ------------------------------------------------------------ %
+% ----------------------  Fiche ?????  ----------------------- %
+% Grand thème : ???
+% Thème : ???
+% ------------------------------------------------------------ %
+
+
+% ======================================================= % 
+% ============== Gestion de la compilation ============== %
+% ======================================================= % 
+\ifdefined\mainIsLoaded\else
+\RequirePackage{import}
+\subimport{../../}{_preambule_CdE_PC}
+
+%Ajout 
+\makeatother
+\usetikzlibrary{decorations.markings,patterns}
+
+\begin{document}
+\fi
+% ======================================================= % 
+% ======================================================= % 
+
+
+
+% ************************************* % 
+% ******** Classes concernées  ******** %
+% ************************************* % 
+% 			    Y = oui			        %
+% 		        N = non			        %
+% ************************************* % 
+\pourPSI{Y}
+\pourPC{Y}
+\pourMP{Y}
+\pourMPI{Y}
+\pourPT{Y}
+\pourTSI{Y}
+\pourTPC{Y}
+\pourATS{Y}
+% ************************************* % 
+
+
+
+% ******************************************************* % 
+% *************   Gestion des couleurs     ************** %
+% ******************************************************* % 
+
+%  Exemple : définition de la couleur bleue de CBD
+%  Merci de préfixer vos couleur
+
+% La commande \couleurNBouCouleur prend deux paramètres :
+% #1 est la couleur NB ; #2 est la couleur "en couleur"
+
+\def\TMPUNcouleurBleu{\couleurNBouCouleur{black}{blue}}
+
+% ******************************************************* % 
+
+
+
+
+% ============================================================================ %
+%                            FICHE D'ENTRAÎNEMENT                              %
+% ============================================================================ %
+% ======================= Métadonnées sur la fiche =========================== %
+\titreFicheEntrainement		{Interférences à deux ondes}
+\grandTheme					{Optique}
+\numeroFiche				{XYZ01}
+\uniqueID					{WZhaxEInvkq} % une chaîne de caractères (a-z, A-Z) aléatoire de 10 caractères.
+\nombreColonnesReponses		{2} % 1, 2, 3, etc.
+% ============================================================================ %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\debutFicheEntrainement                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+% --------------------------------------------------------------------- %
+%                              Prérequis                                %
+% --------------------------------------------------------------------- %
+% ================== Métadonnées sur le prérequis ===================== %
+\avecPrerequis{Y} % Y ou N
+% ===================================================================== %
+\begin{prerequis}
+	% Quelques prérequis, très concis !
+	% Respectez le format suivant :  
+	Onde monochromatique (pulsation, période, nombre d'onde, longueur d'onde). Déphasage.\\
+	$\cos (a+b)=\cos(a)\cos(b)-\sin(a)\sin(b)$\\ 
+	$\cos (a-b)=\cos(a)\cos(b)+\sin(a)\sin(b)$\\ 
+	$\sin (a+b)=\sin(a)\cos(b)+\cos(a)\sin(b)$\\ 
+	$\sin (a-b)=\sin(a)\cos(b)-\cos(a)\sin(b)$\\ 
+	
+	\constantesUtiles
+	\begin{listeConstantes}
+		\item nombre d'Avogadro : $\mathcal{N}_A=\SI{6,02e23}{\per\mol}$
+	\end{listeConstantes}
+\end{prerequis}
+% --------------------------------------------------------------------- %
+
+
+
+
+
+
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+\sectionFicheEntrainement{Superposition de signaux lumineux}
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+
+
+
+
+
+
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Somme de signaux périodiques}
+\hauteurLargeurCadreReponse		{8mm}{2.75cm}
+\dureeResolutionFacultative		{1} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{Y}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+La lumière peut se modéliser par des vibrations lumineuses dont la représentation est une fonction sinusoïdale. On définit les deux signaux suivants :
+
+\begin{itemize}
+	\item $s_1 \left( x,t \right)=S_0 \; \cos \left( \omega t - k x\right)$
+	\item $s_2 \left(x,t\right)=S_0 \; \cos \left( \omega t - k x + \varphi\right)$
+\end{itemize}
+
+\noindent
+avec $\omega$ leur pulsation temporelle, $k$ leur pulsation spatiale (module du vecteur d'onde) et $\varphi$ une phase à l'origine. La superposition $s \left(x,t\right)=s_1 \left(x,t\right) + s_2 \left(x,t\right)$ de ses deux vibrations peut se mettre sous la forme :
+
+\begin{equation*}
+	s \left(x,t\right) = S_0 \big[ \; f\left(x,t\right)\; \left( 1+\cos \varphi \right) + g\left(x,t\right) \; \sin \varphi \; \big]
+\end{equation*}
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer $f\left(x,t\right)$.
+\end{enonce}
+
+\reponse{$\cos\left(\omega t - k x\right)$}
+
+\begin{corrige}
+	\begin{align*}
+		s\left(x,t\right) & = S_0 \; \cos \left(\omega t - k x\right) + S_0 \; \cos \left(\omega t - k x + \varphi\right) \\
+		& = S_0 \; \big( \cos \left(\omega t - k x\right) + \cos \left(\omega t - k x + \varphi\right) \big)\\
+		& = S_0 \; \big( \cos \left(\omega t - k x\right) + \cos \left(\omega t - k x\right)\cos \varphi - \sin \left(\omega t - k x\right)\sin \varphi \big)\\
+		& = S_0 \; \big( \cos \left(\omega t - k x\right) \; \big(1 +\cos \varphi \big) - \sin \left(\omega t - k x\right)\sin \varphi \big)\\
+		& = S_0 \big( \; f\left(x,t\right)\; \big( 1+\cos \varphi \big) + g\left(x,t\right) \; \sin \varphi \; \big)
+	 \end{align*}
+Par identification, on a $f\left(x,t\right)=\cos \left(\omega t - k x\right)$ et $g\left(x,t\right)=-\sin \left(\omega t - k x\right)$
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer $g\left(x,t\right)$.
+\end{enonce}
+
+\reponse{$-\sin\left(\omega t - k x\right)$}
+
+\begin{corrige}
+Voir corrigé de la question précédente.
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+\vspace*{0.4cm}
+\begin{enonce}
+	Pour quelle valeur de phase $\varphi$ le signal résultant $s\left(x,t\right)$ s'annule ? 
+	
+	\begin{listeQCM3Colonnes}
+	\item $\varphi=0$
+	\item $\varphi=\frac{\pi}{2}$
+	\item $\varphi=\pi$
+	\end{listeQCM3Colonnes}
+
+\end{enonce}
+
+\reponse{\reponseC{}}
+
+\begin{corrige}
+	La fonction $s\left(x,t\right)$ s'annule si et seulement si :
+	\begin{equation*}
+		\begin{cases}
+		& 1+ \cos \varphi = 0 \\
+		& \sin \varphi = 0
+		\end{cases}
+	\end{equation*}
+Autrement dit :
+\begin{equation*}
+	\begin{cases}
+		& \varphi = \pi \mod 2\pi \\
+		& \varphi = \pi \mod \pi
+	\end{cases}
+\end{equation*}
+	On en déduit que l'unique condition d'annulation est $\varphi = \pi \mod 2\pi$.
+\end{corrige}
+
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+\newpage
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+\titreEntrainementFacultatif	{\'Etats isophases}
+\hauteurLargeurCadreReponse		{8mm}{1.5cm}
+\dureeResolutionFacultative		{1} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{N}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+Une source émet deux vibrations lumineuses $s\left(x,t\right)=S_0 \; \cos \left(\omega t - k x\right)$ et $s'\left(x,t\right)=S_0 \; \cos \left(\omega t' - k x'\right)$ de période temporelle $T$ (associée à la pulsation $\omega$) et de longueur d'onde $\lambda$ (associée au nombre d'onde $k$).
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Exprimer le déphasage $\Delta \varphi$ entre $s$ et $s'$ pour $t=t'=t_0$.
+	\end{enonce}
+	
+	\reponse{$k\left(x'-x\right)$}
+	
+	\begin{corrige}
+	$\Delta \varphi = \omega t_0 - k x - \left( \omega t_0 - k x' \right) = k \left(x-x'\right)$
+	\end{corrige}
+	
+	% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Comment s'expriment les écarts de positions $\Delta x_n$ tels que $s$ et $s'$ sont isophases ? 
+	\begin{listeQCM2Colonnes}
+	\item $\Delta x_n = n \lambda$
+	\item $\Delta x_n = \left(n+\frac{1}{2}\right) \lambda$
+	\item $\Delta x_n = n \frac{\lambda}{2}$
+	\item $\Delta x_n = \left(n+\frac{3}{4}\right) \lambda$
+	\end{listeQCM2Colonnes}
+
+\end{enonce}
+
+\reponse{\reponseA{}}
+
+\begin{corrige}
+	Le déphasage $\Delta \varphi_n$ entre deux positions successives est constant si $k \left(x_n-x_{n+1}\right)= 0 \mod 2\pi = n 2\pi$. Autrement dit : $\Delta x_n = n\frac{2\pi}{k}= n\frac{2\pi \lambda}{2\pi}= n \lambda$. Pour un instant donné, les positions distantes d'un nombre entier de fois la longueur d'onde de la vibration lumineuse sont en phases : réponse (a).
+\end{corrige}
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Exprimer le déphasage $\Delta \varphi$ entre $s$ et $s'$ pour $x=x'=x_0$.
+	\end{enonce}
+	
+	\reponse{$\omega \left(t'-t \right)$}
+	
+	\begin{corrige}
+		$\Delta \varphi = \omega t - k x_0 - \left( \omega t' - k x_0 \right) = \omega \left(t-t'\right)$
+	\end{corrige}
+	
+	% ************************************** %
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Comment s'expriment les écarts d'instants $\Delta t_n$ tels que $s$ et $s'$ sont isophases ? 
+	\begin{listeQCM2Colonnes}
+	\item $\Delta t_n = n T$
+	\item $\Delta t_n = \left(n+\frac{1}{2}\right) T$
+	\item $\Delta t_n = n \frac{T}{2}$
+	\item $\Delta t_n = \left(n+\frac{3}{4}\right) T$
+	\end{listeQCM2Colonnes}
+
+\end{enonce}
+
+\reponse{\reponseA{}}
+
+\begin{corrige}
+	Le déphasage $\Delta \varphi_n$ entre deux instants successifs est constant si $\omega \left(t_n-t_{n+1}\right)= 0 \mod 2\pi = n 2\pi$. Autrement dit : $\Delta t_n = n\frac{2\pi}{\omega}= n\frac{2\pi T}{2\pi}= n T$. Pour une position donnée, les instants séparés d'un nombre entier de fois la période de la vibration lumineuse sont en phases : réponse (a).
+\end{corrige}
+
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+\sectionFicheEntrainement{\'Eclairement et figures d'interférences}
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+\titreEntrainementFacultatif	{La bonne formule}
+\hauteurLargeurCadreReponse		{8mm}{1.5cm}
+\dureeResolutionFacultative		{1} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{Y}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{N} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+On considère les figures d'interférence suivantes, pour lesquelles on précise le repère cartésien associé à sa description. 
+
+\begin{center}
+	\subimport{_images/}{figure_interf_ALD_v1.tex}
+\end{center}
+
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+\begin{enonce}
+	L'intensité de la figure d'interférence n$^\circ$1 est proportionnelle à la quantité : 
+	
+	\begin{listeQCM3Colonnes}
+	\item $1+ \cos \left(\frac{2\pi a x}{\lambda D} \right)$
+	\item $1+ \cos \left(\frac{2\pi a y}{\lambda D} \right)$
+	\item $1+ \cos \left(\frac{2\pi a z}{\lambda D} \right)$
+	\end{listeQCM3Colonnes}
+
+\end{enonce}
+
+\reponse{\reponseA{}}
+
+\begin{corrige}
+	La figure est dans le plan ($zOx$). L'ensemble des points d'éclairement constant correspond à des franges linéaires de direction parallèle à l'axe ($Oz$). Autrement les ensembles de points isophases ne dépendent ni de la coordonnée $y$ (figure plane) ni de la coordonnée $z$ (orientation des franges), donc uniquement de la coordonnée $x$. De manière analogue, on peut dire qu'il n'y a aucune oscillation d'éclairement selon la coordonnée $z$. Réponse (a).
+\end{corrige}
+
+\newpage
+
+
+\begin{enonce}
+	L'intensité de la figure d'interférence n$^\circ$2 est proportionnelle à la quantité : 
+	
+	\begin{listeQCM3Colonnes}
+		\item $1+ \cos \left(\frac{2\pi a x}{\lambda D} \right)$
+		\item $1+ \cos \left(\frac{2\pi a y}{\lambda D} \right)$
+		\item $1+ \cos \left(\frac{2\pi a z}{\lambda D} \right)$
+	\end{listeQCM3Colonnes}
+
+\end{enonce}
+
+\reponse{\reponseB{}}
+
+\begin{corrige}
+	La figure est dans le plan ($yOz$). L'ensemble des points d'éclairement constant correspond à des franges linéaires de direction parallèle à l'axe ($Oz$). Autrement les ensembles de points isophases ne dépendent ni de la coordonnée $x$ (figure plane) ni de la coordonnée $z$ (orientation des franges), donc uniquement de la coordonnée $y$. De manière analogue, on peut dire qu'il n'y a aucune oscillation d'éclairement selon la coordonnée $z$. Réponse (b).
+\end{corrige}
+
+
+\begin{enonce}
+	L'intensité de la figure d'interférence n$^\circ$3 est proportionnelle à la quantité : 
+	
+	\begin{listeQCM2Colonnes}
+	\item $1+ \cos \big( \frac{4\pi n e}{\lambda } \frac{y_O}{\sqrt{x^2+y_O^2+z^2}} \big)$
+	\item $1+ \cos \big( \frac{4\pi n e}{\lambda }\frac{z_O}{\sqrt{x^2+y^2 +z_O^2}} \big)$
+	\item $1+ \cos \big( \frac{4\pi n e}{\lambda } \frac{x_O}{\sqrt{x_O^2+y^2 +z^2}} \big)$
+	\item $1+ \cos \big( \frac{4\pi n e}{\lambda }\frac{y + z}{\sqrt{x_O^2+y_0^2 +z_O^2}} \big)$
+	\end{listeQCM2Colonnes}
+
+\end{enonce}
+
+\reponse{\reponseC{}}
+
+\begin{corrige}
+	La figure est dans le plan ($zOy$). L'ensemble des points d'éclairement constant correspond à des franges circulaires. Les ensembles de points d'éclairement constant sont définis pour une valeur constante de distance au centre de la figure $r=\sqrt{y^2+z^2}$ issu du point $O$. Pour aller plus loin, la théorie assure que l'éclairement dépend du cosinus de l'inclinaison des anneaux, soit le rapport de l'adjacent sur l'hypoténuse. Réponse (c).
+\end{corrige}
+
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+\sectionFicheEntrainement{Interférométrie}
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• %
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Sur l'interféromètre de Fabry-Perot}
+\hauteurLargeurCadreReponse		{8mm}{2.0cm}
+\dureeResolutionFacultative		{2} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{N}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.55}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+Un interféromètre de Fabry-Perot repose sur l'association de deux miroirs semi-réfléchissants placés en parallèle l'un de l'autre. On note $n$ l'indice du milieu optique qui règne entre les deux miroirs. En franchissant l'interféromètre, un rayon lumineux incident sera divisé en deux rayons lumineux émergents : l'un qui n'aura subit aucune réflexion, l'autre deux réflexions (voir schéma ci-contre). En sortie de l'interféromètre, une lentille mince convergente permet de focaliser le faisceau parallèle émergent pour faire interférer les rayons en un point $\ptM$ au niveau de l'écran.
+
+\smallskip
+
+En notant $i$ l'angle de réflexion : $\widehat{\ptA \ptB \ptD}=2i$ et $\widehat{\ptB \ptE \ptH}=i$.
+
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+                                \initialisationPartieDroite %
+%                                                           %
+%                                                           %
+
+
+	\begin{center}
+		\subimport{_images/}{Fabry_Perot_ALD_v1.tex}
+		\end{center}
+
+		
+
+% --------------------------------------------------------- %
+                               \finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer la différence de marche $\delta_{\ptS\ptM}$
+\end{enonce}
+
+\reponse{$2ne \cos i$}
+
+\begin{corrige}
+$\delta_{\ptS\ptM}=\left(\ptS\ptM\right)_2 - \left(\ptS\ptM\right)_1 = \left(\ptS\ptB\right)+\left(\ptB\ptD\right)+\left(\ptD\ptE\right)+\left(\ptE\ptF\right) + \left(\ptF\ptM\right) - \big( \left(\ptS\ptB\right) + \left(\ptB\ptH\right) + \left(\ptH\ptC\right) + \left(\ptC\ptM\right) \big)$.\\
+Or par construction on sait que $\left(\ptE\ptF\right)=\left(\ptH\ptC\right)$ (projection orthogonale) et $\left(\ptC\ptM\right)=\left(\ptF\ptM\right)$ (lentille mince).\\
+De plus on remarque que $\left(\ptB\ptD\right)= \left(\ptD\ptE\right) = n\frac{e}{\cos i}$ ; et que $\left(\ptB\ptH\right) = n\ptB\ptE\sin i = 2n e \tan i \sin i = \frac{2ne \sin^2 i}{\cos i}$.\\
+Finalement :
+\begin{equation*}
+	\delta_{\ptS\ptM}= \left(\ptB\ptD\right)+\left(\ptD\ptE\right) - \left(\ptB\ptH\right) = n\frac{e}{\cos i} + n\frac{e}{\cos i} - \frac{2ne sin^2 i}{\cos i} = 2ne (\frac{1-\sin^2 i}{\cos i} ) = 2ne \cos i
+\end{equation*} 
+\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Le rapport de l'éclairement émis par $S$ sur l'éclairement reçu $M$ vaut  : 
+	
+	\begin{listeQCM3Colonnes}
+	\item $\frac{1}{4}$
+	\item $\frac{5}{16}$
+	\item $\frac{2}{3}$
+	\end{listeQCM3Colonnes}
+
+\end{enonce}
+
+\reponse{\reponseB{}}
+
+\begin{corrige}
+	La rayon supérieur (1) franchit 2 fois un miroir semi-réfléchissant, donc $I_1=I_0/2^2=I_0/4$. Le rayon inférieur (2) franchit 2 fois un miroir et subit deux réflexions, donc $I_2=I_0/2^4=I_0/16$. Finalement : $I_M=I_0 \left(\frac{1}{4} + \frac{1}{16}\right)=\frac{5}{16} I_0$. Réponse (a).
+\end{corrige}
+
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+On rappelle que l'éclairement de la figure d'interférence vérifie la formule de Fresnel : $I\left(M\right)=2I_0 \left(1 + \cos \frac{\delta}{2\pi} \right)$,
+
+\begin{enonce}
+	 Quelles formes auront les franges d'interférences ?
+	
+	\begin{listeQCM3Colonnes}
+	\item bandes rectilignes
+	\item carrés épais
+	\item cercles épais
+	\end{listeQCM3Colonnes}
+
+\end{enonce}
+
+\reponse{\reponseC{}}
+
+\begin{corrige}
+	Les franges d'interférences sont isophases, donc telles que $\delta$ soit constant, soit des cercles. On observe des anneaux d'égales inclinaison.
+\end{corrige}
+
+% ************************************** %
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+\newpage
+
+% ********************************************************************* %
+%                           ENTRAÎNEMENT                                % 
+% ********************************************************************* %
+% ================ Métadonnées sur l'entraînement ===================== %
+
+\titreEntrainementFacultatif	{Sur l'interféromètre de Michelson - configuration coin d'air}
+\hauteurLargeurCadreReponse		{8mm}{2.0cm}
+\dureeResolutionFacultative		{3} % 1, 2, 3 ou 4
+\basiqueEtTransversal 			{N}
+\calculALaMain					{N}
+\nombreColonnesQuestions		{1} % vide, 1, 2, 3, etc.
+\avecPlusieursQuestions			{Y} % Y ou N
+\initialisationEntrainement
+% ===================================================================== %
+
+
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% 		  Insertion d'une image en regard d'un texte
+% mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm %
+% --------------------------------------------------------- %
+\pourcentageDeLaPartieAGauche   {0.55}
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à gauche -------------------- %
+%                                                           %
+                                \initialisationPartieGauche % 
+%                                                           %
+%                                                           %
+Un interféromètre de Michelson repose sur l'association de deux miroirs plans et d'une lame semi-réfléchissante. En configuration coin d'air, les miroirs plans ne sont pas strictement orthogonaux. Le dispositif équivalent est représenté sur le schéma. 
+
+\smallskip
+
+On rappelle que la différence de marche $\delta$ correspond à la quantité : $\delta_{SM} = \int_S^M \; n(s) \; \mathrm{d}s$ avec $n$ l'indice optique au niveau de l'abscisse curviligne $s$ associé au trajet du rayon.
+
+% --------------------------------------------------------- %
+%                                                           %
+% -------------------- Partie à droite -------------------- %
+%                                                           %
+                                \initialisationPartieDroite %
+%                                                           %
+%                                                           %
+
+
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{_images/Coin_air.png}
+		\end{center}
+
+		
+
+% --------------------------------------------------------- %
+                               \finalisationDuPartageDePage %					
+% --------------------------------------------------------- %
+
+
+
+
+% =============================================================================== %
+\debutEntrainement
+% =============================================================================== %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+Exprimer la différence de marche $\delta_{SM}$
+\end{enonce}
+
+\reponse{$2 x \tan \alpha$}
+
+%\begin{corrige}
+%\end{corrige}
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+\begin{enonce}
+	Le rapport de l'éclairement émis par $S$ sur l'éclairement reçu $M$ vaut  : 
+	
+	\begin{listeQCM3Colonnes}
+	\item $\frac{1}{4}$
+	\item $\frac{1}{2}$
+	\item $\frac{3}{4}$
+	\end{listeQCM3Colonnes}
+
+\end{enonce}
+
+\reponse{\reponseB{}}
+
+\begin{corrige}
+	Chaque rayon franchit 1 fois la lame semi-réflechissante et subit 1 réflexion sur un miroir donc $I_M=I_0 \left(\frac{1}{2^2} + \frac{1}{2^2}\right)=\frac{1}{2} I_0$. Réponse (b).
+\end{corrige}
+
+
+% ************************************** %
+
+
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+%               Question                 %
+% ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %
+
+On rappelle que l'éclairement de la figure d'interférence vérifie la formule de Fresnel : $I\left(M\right)=2I_0 \left(1 + \cos \frac{\delta}{2\pi} \right)$.
+
+\begin{enonce}
+	 Quelles formes auront les franges d'interférences ?
+
+	\begin{listeQCM3Colonnes}
+	\item bandes rectilignes
+	\item carrés épais
+	\item cercles épais
+	\end{listeQCM3Colonnes}
+
+\end{enonce}
+
+\reponse{\reponseA{}}
+
+\begin{corrige}
+	Les franges d'interférences sont isophases, donc telles que $\delta$ soit constant, soit des bandes. On observe des franges rectilignes d'égales épaisseur.
+\end{corrige}
+
+% =============================================================================== %
+\finEntrainement
+% =============================================================================== %
+
+% ---------------------------------------------------------------------------- %
+%                       Affichage des réponses mélangées                       %
+% ---------------------------------------------------------------------------- %
+\afficheReponsesMelangees
+% ---------------------------------------------------------------------------- %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\finFicheEntrainement                                                                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ======================================================= % 
+% ============== Gestion de la compilation ============== %
+% ======================================================= % 
+\ifdefined\mainIsLoaded\else
+\printReponsesEtCorriges
+\end{document}\fi
+% ======================================================= % 
+% ======================================================= % 
